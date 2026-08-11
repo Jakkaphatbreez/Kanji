@@ -1,0 +1,28 @@
+import type { VocabEntry } from '@/types/content';
+
+export const vocabN5: VocabEntry[] = [
+  { jp: '私', kana: 'わたし', romaji: 'watashi', meaningTh: 'ฉัน/ผม', meaningEn: 'I / me', category: 'noun' },
+  { jp: '学生', kana: 'がくせい', romaji: 'gakusei', meaningTh: 'นักเรียน/นักศึกษา', meaningEn: 'student', category: 'noun' },
+  { jp: '先生', kana: 'せんせい', romaji: 'sensei', meaningTh: 'คุณครู/อาจารย์', meaningEn: 'teacher', category: 'noun' },
+  { jp: '学校', kana: 'がっこう', romaji: 'gakkou', meaningTh: 'โรงเรียน', meaningEn: 'school', category: 'noun' },
+  { jp: '会社', kana: 'かいしゃ', romaji: 'kaisha', meaningTh: 'บริษัท', meaningEn: 'company', category: 'noun' },
+  { jp: '水', kana: 'みず', romaji: 'mizu', meaningTh: 'น้ำ', meaningEn: 'water', category: 'noun' },
+  { jp: '食べ物', kana: 'たべもの', romaji: 'tabemono', meaningTh: 'อาหาร', meaningEn: 'food', category: 'noun' },
+  { jp: '食べる', kana: 'たべる', romaji: 'taberu', meaningTh: 'กิน', meaningEn: 'to eat', category: 'verb' },
+  { jp: '飲む', kana: 'のむ', romaji: 'nomu', meaningTh: 'ดื่ม', meaningEn: 'to drink', category: 'verb' },
+  { jp: '行く', kana: 'いく', romaji: 'iku', meaningTh: 'ไป', meaningEn: 'to go', category: 'verb' },
+  { jp: '来る', kana: 'くる', romaji: 'kuru', meaningTh: 'มา', meaningEn: 'to come', category: 'verb' },
+  { jp: '見る', kana: 'みる', romaji: 'miru', meaningTh: 'ดู', meaningEn: 'to see / watch', category: 'verb' },
+  { jp: '聞く', kana: 'きく', romaji: 'kiku', meaningTh: 'ฟัง/ถาม', meaningEn: 'to listen / to ask', category: 'verb' },
+  { jp: '話す', kana: 'はなす', romaji: 'hanasu', meaningTh: 'พูด', meaningEn: 'to speak', category: 'verb' },
+  { jp: '大きい', kana: 'おおきい', romaji: 'ookii', meaningTh: 'ใหญ่', meaningEn: 'big', category: 'adjective' },
+  { jp: '小さい', kana: 'ちいさい', romaji: 'chiisai', meaningTh: 'เล็ก', meaningEn: 'small', category: 'adjective' },
+  { jp: '新しい', kana: 'あたらしい', romaji: 'atarashii', meaningTh: 'ใหม่', meaningEn: 'new', category: 'adjective' },
+  { jp: '古い', kana: 'ふるい', romaji: 'furui', meaningTh: 'เก่า', meaningEn: 'old', category: 'adjective' },
+  { jp: '高い', kana: 'たかい', romaji: 'takai', meaningTh: 'แพง/สูง', meaningEn: 'expensive / tall', category: 'adjective' },
+  { jp: '安い', kana: 'やすい', romaji: 'yasui', meaningTh: 'ถูก', meaningEn: 'cheap', category: 'adjective' },
+  { jp: 'とても', kana: 'とても', romaji: 'totemo', meaningTh: 'มาก', meaningEn: 'very', category: 'adverb' },
+  { jp: '少し', kana: 'すこし', romaji: 'sukoshi', meaningTh: 'นิดหน่อย', meaningEn: 'a little', category: 'adverb' },
+  { jp: 'おはよう', kana: 'おはよう', romaji: 'ohayou', meaningTh: 'อรุณสวัสดิ์', meaningEn: 'good morning', category: 'greeting' },
+  { jp: 'ありがとう', kana: 'ありがとう', romaji: 'arigatou', meaningTh: 'ขอบคุณ', meaningEn: 'thank you', category: 'greeting' },
+];
