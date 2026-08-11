@@ -1,5 +1,11 @@
 export type Language = 'th' | 'en';
-export type QuizCategory = 'hiragana' | 'katakana' | 'vocab' | 'vocabExtra' | 'particle' | 'grammar';
+export type QuizCategory =
+  | 'hiragana'
+  | 'katakana'
+  | 'vocab'
+  | `vocabExtra${number}`
+  | 'particle'
+  | 'grammar';
 export type QuizMode = 'multiple-choice' | 'typing';
 
 export interface QuizItem {

@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { getQuizItems } from './items';
+import { vocabN5ExtraBatches } from '@/data/vocab-n5-extra';
 
 describe('getQuizItems', () => {
   it('returns one item per hiragana entry with a non-empty prompt and answer', () => {
@@ -40,5 +41,19 @@ describe('getQuizItems', () => {
     const items = getQuizItems('grammar', 'en');
     expect(items).toHaveLength(60);
     expect(new Set(items.map(i => i.id)).size).toBe(60);
+  });
+
+  it('returns one item per word for a vocabExtra batch, matching that batch size', () => {
+    const items = getQuizItems('vocabExtra0', 'en');
+    expect(items).toHaveLength(vocabN5ExtraBatches[0].length);
+
+    const lastIndex = vocabN5ExtraBatches.length - 1;
+    const lastItems = getQuizItems(`vocabExtra${lastIndex}`, 'en');
+    expect(lastItems).toHaveLength(vocabN5ExtraBatches[lastIndex].length);
+  });
+
+  it('returns an empty array for an out-of-range vocabExtra batch index', () => {
+    const items = getQuizItems(`vocabExtra${vocabN5ExtraBatches.length}`, 'en');
+    expect(items).toEqual([]);
   });
 });

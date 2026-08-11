@@ -1,5 +1,7 @@
 import type { VocabEntry } from '@/types/content';
 
+export const VOCAB_EXTRA_BATCH_SIZE = 50;
+
 export const vocabN5Extra: VocabEntry[] = [
   { jp: 'アイスクリーム', kana: 'アイスクリーム', romaji: 'aisukuriimu', meaningTh: 'ไอศกรีม', meaningEn: 'ice cream', category: 'noun' },
   { jp: '間', kana: 'あいだ', romaji: 'aida', meaningTh: 'ระหว่าง', meaningEn: 'between / interval', category: 'noun' },
@@ -606,3 +608,14 @@ export const vocabN5Extra: VocabEntry[] = [
   { jp: 'わさび', kana: 'わさび', romaji: 'wasabi', meaningTh: 'วาซาบิ', meaningEn: 'wasabi', category: 'noun' },
   { jp: 'わすれます', kana: 'わすれます', romaji: 'wasuremasu', meaningTh: 'ลืม', meaningEn: 'to forget', category: 'verb' },
 ];
+
+export const vocabN5ExtraBatches: VocabEntry[][] = Array.from(
+  { length: Math.ceil(vocabN5Extra.length / VOCAB_EXTRA_BATCH_SIZE) },
+  (_, i) => vocabN5Extra.slice(i * VOCAB_EXTRA_BATCH_SIZE, (i + 1) * VOCAB_EXTRA_BATCH_SIZE)
+);
+
+export function vocabN5ExtraBatchLabel(index: number): string {
+  const start = index * VOCAB_EXTRA_BATCH_SIZE + 1;
+  const end = Math.min((index + 1) * VOCAB_EXTRA_BATCH_SIZE, vocabN5Extra.length);
+  return `${start}-${end}`;
+}

@@ -12,7 +12,6 @@ import type { QuizCategory, QuizMode, QuizQuestion } from '@/lib/quiz/types';
 const CATEGORY_QUESTION_LIMIT: Partial<Record<QuizCategory, number>> = {
   particle: 50,
   grammar: 50,
-  vocabExtra: 50,
 };
 
 type Stage =

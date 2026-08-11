@@ -2,13 +2,29 @@
 
 import { useState } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
+import { vocabN5ExtraBatches, vocabN5ExtraBatchLabel } from '@/data/vocab-n5-extra';
 import type { QuizCategory, QuizMode } from '@/lib/quiz/types';
 
 interface QuizSetupProps {
   onStart: (category: QuizCategory, mode: QuizMode) => void;
 }
 
-const CATEGORIES: QuizCategory[] = ['hiragana', 'katakana', 'vocab', 'vocabExtra', 'particle', 'grammar'];
+const CATEGORIES: QuizCategory[] = [
+  'hiragana',
+  'katakana',
+  'vocab',
+  ...vocabN5ExtraBatches.map((_, i) => `vocabExtra${i}` as QuizCategory),
+  'particle',
+  'grammar',
+];
+
+function categoryLabel(category: QuizCategory, categories: ReturnType<typeof useLanguage>['t']['quiz']['categories']): string {
+  if (category.startsWith('vocabExtra')) {
+    const index = Number(category.slice('vocabExtra'.length));
+    return `${categories.vocabExtra} ${vocabN5ExtraBatchLabel(index)}`;
+  }
+  return categories[category as keyof typeof categories];
+}
 
 export function QuizSetup({ onStart }: QuizSetupProps) {
   const { t } = useLanguage();
@@ -28,7 +44,7 @@ export function QuizSetup({ onStart }: QuizSetupProps) {
               onClick={() => setCategory(c)}
               className={category === c ? 'rounded border-2 border-blue-600 px-3 py-1' : 'rounded border px-3 py-1'}
             >
-              {t.quiz.categories[c]}
+              {categoryLabel(c, t.quiz.categories)}
             </button>
           ))}
         </div>
