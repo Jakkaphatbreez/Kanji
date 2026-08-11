@@ -11,17 +11,17 @@ export default function GrammarPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold">{t.grammar.title}</h1>
+      <h1 className="text-2xl font-bold text-indigo-900">{t.grammar.title}</h1>
       <div className="my-4 flex gap-2">
         <button
           onClick={() => setTab('particles')}
-          className={tab === 'particles' ? 'font-bold underline' : ''}
+          className={tab === 'particles' ? 'font-bold text-pink-600 underline' : 'text-gray-500'}
         >
           {t.grammar.particlesTab}
         </button>
         <button
           onClick={() => setTab('grammar')}
-          className={tab === 'grammar' ? 'font-bold underline' : ''}
+          className={tab === 'grammar' ? 'font-bold text-pink-600 underline' : 'text-gray-500'}
         >
           {t.grammar.grammarTab}
         </button>
@@ -30,8 +30,8 @@ export default function GrammarPage() {
       {tab === 'particles' ? (
         <ul className="space-y-4">
           {particles.map(p => (
-            <li key={p.particle} className="rounded border border-gray-200 p-3">
-              <div className="text-lg font-semibold">{p.particle}</div>
+            <li key={p.particle} className="rounded border border-pink-200 bg-white p-3">
+              <div className="text-lg font-semibold text-indigo-900">{p.particle}</div>
               <div>{language === 'th' ? p.usageTh : p.usageEn}</div>
               <ul className="mt-2 space-y-1 text-gray-600">
                 {p.examples.map((example, i) => (
@@ -46,8 +46,8 @@ export default function GrammarPage() {
       ) : (
         <ul className="space-y-4">
           {grammarPatterns.map(g => (
-            <li key={g.pattern} className="rounded border border-gray-200 p-3">
-              <div className="text-lg font-semibold">{g.pattern}</div>
+            <li key={g.pattern} className="rounded border border-pink-200 bg-white p-3">
+              <div className="text-lg font-semibold text-indigo-900">{g.pattern}</div>
               <div>{language === 'th' ? g.meaningTh : g.meaningEn}</div>
               <ul className="mt-2 space-y-1 text-gray-600">
                 {g.examples.map((example, i) => (

@@ -24,7 +24,7 @@ export function QuizSetup({ onStart }: QuizSetupProps) {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold">{t.quiz.title}</h1>
+      <h1 className="text-2xl font-bold text-indigo-900">{t.quiz.title}</h1>
 
       <div className="my-4">
         <p className="mb-2 font-semibold">{t.quiz.selectCategory}</p>
@@ -33,7 +33,7 @@ export function QuizSetup({ onStart }: QuizSetupProps) {
             <button
               key={c}
               onClick={() => setMainCategory(c)}
-              className={mainCategory === c ? 'rounded border-2 border-blue-600 px-3 py-1' : 'rounded border px-3 py-1'}
+              className={mainCategory === c ? 'rounded border-2 border-pink-500 px-3 py-1 text-pink-600' : 'rounded border border-pink-200 px-3 py-1'}
             >
               {t.quiz.categories[c]}
             </button>
@@ -42,7 +42,7 @@ export function QuizSetup({ onStart }: QuizSetupProps) {
             <select
               value={extraBatch}
               onChange={e => setExtraBatch(Number(e.target.value))}
-              className="rounded border border-gray-300 px-3 py-1"
+              className="rounded border border-pink-300 bg-white px-3 py-1"
             >
               {vocabN5ExtraBatches.map((_, i) => (
                 <option key={i} value={i}>
@@ -59,20 +59,23 @@ export function QuizSetup({ onStart }: QuizSetupProps) {
         <div className="flex gap-2">
           <button
             onClick={() => setMode('multiple-choice')}
-            className={mode === 'multiple-choice' ? 'rounded border-2 border-blue-600 px-3 py-1' : 'rounded border px-3 py-1'}
+            className={mode === 'multiple-choice' ? 'rounded border-2 border-pink-500 px-3 py-1 text-pink-600' : 'rounded border border-pink-200 px-3 py-1'}
           >
             {t.quiz.multipleChoice}
           </button>
           <button
             onClick={() => setMode('typing')}
-            className={mode === 'typing' ? 'rounded border-2 border-blue-600 px-3 py-1' : 'rounded border px-3 py-1'}
+            className={mode === 'typing' ? 'rounded border-2 border-pink-500 px-3 py-1 text-pink-600' : 'rounded border border-pink-200 px-3 py-1'}
           >
             {t.quiz.typing}
           </button>
         </div>
       </div>
 
-      <button onClick={() => onStart(resolvedCategory, mode)} className="rounded bg-blue-600 px-4 py-2 text-white">
+      <button
+        onClick={() => onStart(resolvedCategory, mode)}
+        className="rounded bg-pink-500 px-4 py-2 text-white hover:bg-pink-600"
+      >
         {t.quiz.start}
       </button>
     </div>

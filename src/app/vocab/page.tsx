@@ -19,17 +19,17 @@ export default function VocabPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold">{t.vocab.title}</h1>
+      <h1 className="text-2xl font-bold text-indigo-900">{t.vocab.title}</h1>
       <div className="my-4 flex gap-2">
         <button
           onClick={() => setTab('core')}
-          className={tab === 'core' ? 'font-bold underline' : ''}
+          className={tab === 'core' ? 'font-bold text-pink-600 underline' : 'text-gray-500'}
         >
           {t.vocab.coreTab}
         </button>
         <button
           onClick={() => setTab('extra')}
-          className={tab === 'extra' ? 'font-bold underline' : ''}
+          className={tab === 'extra' ? 'font-bold text-pink-600 underline' : 'text-gray-500'}
         >
           {t.vocab.extraTab}
         </button>
@@ -38,7 +38,7 @@ export default function VocabPage() {
         <select
           value={extraBatch}
           onChange={e => setExtraBatch(Number(e.target.value))}
-          className="mb-4 rounded border border-gray-300 px-3 py-2"
+          className="mb-4 rounded border border-pink-300 bg-white px-3 py-2"
         >
           {vocabN5ExtraBatches.map((_, i) => (
             <option key={i} value={i}>
@@ -50,7 +50,7 @@ export default function VocabPage() {
       <select
         value={category}
         onChange={e => setCategory(e.target.value as VocabCategory | 'all')}
-        className="my-4 rounded border border-gray-300 px-3 py-2"
+        className="my-4 rounded border border-pink-300 bg-white px-3 py-2"
       >
         <option value="all">{t.vocab.allCategories}</option>
         {categoryKeys.map(key => (

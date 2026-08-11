@@ -13,11 +13,11 @@ export function QuizResult({ score, total, onPlayAgain }: QuizResultProps) {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold">{t.quiz.yourScore}</h2>
-      <p className="mt-2 text-4xl font-bold">
+      <h2 className="text-2xl font-bold text-indigo-900">{t.quiz.yourScore}</h2>
+      <p className="mt-2 text-4xl font-bold text-pink-600">
         {score} / {total}
       </p>
-      <button onClick={onPlayAgain} className="mt-4 rounded bg-blue-600 px-4 py-2 text-white">
+      <button onClick={onPlayAgain} className="mt-4 rounded bg-pink-500 px-4 py-2 text-white hover:bg-pink-600">
         {t.quiz.playAgain}
       </button>
     </div>

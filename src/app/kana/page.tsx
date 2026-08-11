@@ -13,17 +13,17 @@ export default function KanaPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold">{t.kana.title}</h1>
+      <h1 className="text-2xl font-bold text-indigo-900">{t.kana.title}</h1>
       <div className="my-4 flex gap-2">
         <button
           onClick={() => setTab('hiragana')}
-          className={tab === 'hiragana' ? 'font-bold underline' : ''}
+          className={tab === 'hiragana' ? 'font-bold text-pink-600 underline' : 'text-gray-500'}
         >
           {t.kana.hiragana}
         </button>
         <button
           onClick={() => setTab('katakana')}
-          className={tab === 'katakana' ? 'font-bold underline' : ''}
+          className={tab === 'katakana' ? 'font-bold text-pink-600 underline' : 'text-gray-500'}
         >
           {t.kana.katakana}
         </button>

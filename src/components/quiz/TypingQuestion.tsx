@@ -23,12 +23,12 @@ export function TypingQuestion({ question, disabled, onAnswer }: TypingQuestionP
         onChange={e => setValue(e.target.value)}
         disabled={disabled}
         placeholder={t.quiz.typingPlaceholder}
-        className="w-full rounded border border-gray-300 px-3 py-2"
+        className="w-full rounded border border-pink-300 bg-white px-3 py-2 focus:border-pink-500 focus:outline-none"
       />
       <button
         onClick={() => onAnswer(value)}
         disabled={disabled}
-        className="mt-2 rounded bg-blue-600 px-4 py-2 text-white disabled:opacity-50"
+        className="mt-2 rounded bg-pink-500 px-4 py-2 text-white hover:bg-pink-600 disabled:opacity-50"
       >
         {t.quiz.submit}
       </button>

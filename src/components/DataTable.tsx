@@ -26,13 +26,13 @@ export function DataTable<T>({ data, columns, searchPlaceholder, getSearchText, 
         value={query}
         onChange={e => setQuery(e.target.value)}
         placeholder={searchPlaceholder}
-        className="mb-4 w-full rounded border border-gray-300 px-3 py-2"
+        className="mb-4 w-full rounded border border-pink-300 bg-white px-3 py-2 focus:border-pink-500 focus:outline-none"
       />
       <table className="w-full border-collapse text-left">
         <thead>
           <tr>
             {columns.map(col => (
-              <th key={col.header} className="border-b border-gray-300 px-3 py-2 font-semibold">
+              <th key={col.header} className="border-b border-pink-300 px-3 py-2 font-semibold text-indigo-900">
                 {col.header}
               </th>
             ))}
@@ -42,7 +42,7 @@ export function DataTable<T>({ data, columns, searchPlaceholder, getSearchText, 
           {filtered.map(row => (
             <tr key={rowKey(row)}>
               {columns.map(col => (
-                <td key={col.header} className="border-b border-gray-200 px-3 py-2">
+                <td key={col.header} className="border-b border-pink-100 px-3 py-2">
                   {col.accessor(row)}
                 </td>
               ))}

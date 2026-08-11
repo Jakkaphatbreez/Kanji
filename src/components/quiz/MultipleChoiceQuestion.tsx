@@ -18,7 +18,7 @@ export function MultipleChoiceQuestion({ question, disabled, onAnswer }: Multipl
             key={choice}
             disabled={disabled}
             onClick={() => onAnswer(choice)}
-            className="rounded border px-4 py-2 text-left disabled:opacity-50"
+            className="rounded border border-pink-200 px-4 py-2 text-left hover:border-pink-400 disabled:opacity-50"
           >
             {choice}
           </button>
