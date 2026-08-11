@@ -4,8 +4,8 @@ import { vocabN5 } from './vocab-n5';
 const VALID_CATEGORIES = ['noun', 'verb', 'adjective', 'adverb', 'greeting'];
 
 describe('vocab-n5 data', () => {
-  it('has 24 entries', () => {
-    expect(vocabN5).toHaveLength(24);
+  it('has 100 entries', () => {
+    expect(vocabN5).toHaveLength(100);
   });
 
   it('every entry has non-empty jp, kana, romaji, meaningTh, meaningEn, and a valid category', () => {
