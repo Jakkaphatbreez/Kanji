@@ -9,27 +9,18 @@ interface QuizSetupProps {
   onStart: (category: QuizCategory, mode: QuizMode) => void;
 }
 
-const CATEGORIES: QuizCategory[] = [
-  'hiragana',
-  'katakana',
-  'vocab',
-  ...vocabN5ExtraBatches.map((_, i) => `vocabExtra${i}` as QuizCategory),
-  'particle',
-  'grammar',
-];
+type MainCategory = 'hiragana' | 'katakana' | 'vocab' | 'vocabExtra' | 'particle' | 'grammar';
 
-function categoryLabel(category: QuizCategory, categories: ReturnType<typeof useLanguage>['t']['quiz']['categories']): string {
-  if (category.startsWith('vocabExtra')) {
-    const index = Number(category.slice('vocabExtra'.length));
-    return `${categories.vocabExtra} ${vocabN5ExtraBatchLabel(index)}`;
-  }
-  return categories[category as keyof typeof categories];
-}
+const MAIN_CATEGORIES: MainCategory[] = ['hiragana', 'katakana', 'vocab', 'vocabExtra', 'particle', 'grammar'];
 
 export function QuizSetup({ onStart }: QuizSetupProps) {
   const { t } = useLanguage();
-  const [category, setCategory] = useState<QuizCategory>('hiragana');
+  const [mainCategory, setMainCategory] = useState<MainCategory>('hiragana');
+  const [extraBatch, setExtraBatch] = useState(0);
   const [mode, setMode] = useState<QuizMode>('multiple-choice');
+
+  const resolvedCategory: QuizCategory =
+    mainCategory === 'vocabExtra' ? (`vocabExtra${extraBatch}` as QuizCategory) : mainCategory;
 
   return (
     <div>
@@ -37,16 +28,29 @@ export function QuizSetup({ onStart }: QuizSetupProps) {
 
       <div className="my-4">
         <p className="mb-2 font-semibold">{t.quiz.selectCategory}</p>
-        <div className="flex flex-wrap gap-2">
-          {CATEGORIES.map(c => (
+        <div className="flex flex-wrap items-center gap-2">
+          {MAIN_CATEGORIES.map(c => (
             <button
               key={c}
-              onClick={() => setCategory(c)}
-              className={category === c ? 'rounded border-2 border-blue-600 px-3 py-1' : 'rounded border px-3 py-1'}
+              onClick={() => setMainCategory(c)}
+              className={mainCategory === c ? 'rounded border-2 border-blue-600 px-3 py-1' : 'rounded border px-3 py-1'}
             >
-              {categoryLabel(c, t.quiz.categories)}
+              {t.quiz.categories[c]}
             </button>
           ))}
+          {mainCategory === 'vocabExtra' && (
+            <select
+              value={extraBatch}
+              onChange={e => setExtraBatch(Number(e.target.value))}
+              className="rounded border border-gray-300 px-3 py-1"
+            >
+              {vocabN5ExtraBatches.map((_, i) => (
+                <option key={i} value={i}>
+                  {vocabN5ExtraBatchLabel(i)}
+                </option>
+              ))}
+            </select>
+          )}
         </div>
       </div>
 
@@ -68,7 +72,7 @@ export function QuizSetup({ onStart }: QuizSetupProps) {
         </div>
       </div>
 
-      <button onClick={() => onStart(category, mode)} className="rounded bg-blue-600 px-4 py-2 text-white">
+      <button onClick={() => onStart(resolvedCategory, mode)} className="rounded bg-blue-600 px-4 py-2 text-white">
         {t.quiz.start}
       </button>
     </div>
