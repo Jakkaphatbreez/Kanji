@@ -1,0 +1,69 @@
+{
+  "nav": {
+    "home": "หน้าแรก",
+    "kana": "คะนะ",
+    "vocab": "คำศัพท์",
+    "grammar": "ไวยากรณ์",
+    "quiz": "แบบทดสอบ"
+  },
+  "home": {
+    "title": "เรียนภาษาญี่ปุ่น N5",
+    "subtitle": "ฮิรางานะ คาตากานะ คำศัพท์ และไวยากรณ์พื้นฐาน"
+  },
+  "kana": {
+    "title": "ตารางคะนะ",
+    "hiragana": "ฮิรางานะ",
+    "katakana": "คาตากานะ",
+    "charColumn": "ตัวอักษร",
+    "romajiColumn": "โรมาจิ",
+    "searchPlaceholder": "ค้นหาคะนะ..."
+  },
+  "vocab": {
+    "title": "คำศัพท์ N5",
+    "searchPlaceholder": "ค้นหาคำศัพท์...",
+    "allCategories": "ทุกหมวด",
+    "jpColumn": "ภาษาญี่ปุ่น",
+    "kanaColumn": "คะนะ",
+    "meaningColumn": "ความหมาย",
+    "categoryColumn": "หมวด",
+    "categories": {
+      "noun": "คำนาม",
+      "verb": "คำกริยา",
+      "adjective": "คำคุณศัพท์",
+      "adverb": "คำวิเศษณ์",
+      "greeting": "คำทักทาย"
+    }
+  },
+  "grammar": {
+    "title": "คำช่วยและไวยากรณ์",
+    "particlesTab": "คำช่วย",
+    "grammarTab": "ไวยากรณ์"
+  },
+  "quiz": {
+    "title": "แบบทดสอบ",
+    "selectCategory": "เลือกหมวด",
+    "selectMode": "เลือกรูปแบบ",
+    "multipleChoice": "เลือกตอบ",
+    "typing": "พิมพ์ตอบ",
+    "start": "เริ่มทำแบบทดสอบ",
+    "next": "ข้อต่อไป",
+    "submit": "ส่งคำตอบ",
+    "reducedCountNotice": "มีคำในหมวดนี้ไม่พอ ระบบลดจำนวนคำถามให้",
+    "correct": "ถูกต้อง!",
+    "incorrect": "ไม่ถูกต้อง",
+    "yourScore": "คะแนนของคุณ",
+    "playAgain": "เล่นอีกครั้ง",
+    "typingPlaceholder": "พิมพ์คำตอบ...",
+    "categories": {
+      "hiragana": "ฮิรางานะ",
+      "katakana": "คาตากานะ",
+      "vocab": "คำศัพท์",
+      "particle": "คำช่วย",
+      "grammar": "ไวยากรณ์"
+    }
+  },
+  "language": {
+    "th": "ไทย",
+    "en": "English"
+  }
+}
