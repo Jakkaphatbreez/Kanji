@@ -15,7 +15,8 @@
     "hiragana": "Hiragana",
     "katakana": "Katakana",
     "charColumn": "Character",
-    "romajiColumn": "Romaji"
+    "romajiColumn": "Romaji",
+    "searchPlaceholder": "Search kana..."
   },
   "vocab": {
     "title": "N5 Vocabulary",

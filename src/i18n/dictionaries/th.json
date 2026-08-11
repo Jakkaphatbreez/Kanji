@@ -15,7 +15,8 @@
     "hiragana": "ฮิรางานะ",
     "katakana": "คาตากานะ",
     "charColumn": "ตัวอักษร",
-    "romajiColumn": "โรมาจิ"
+    "romajiColumn": "โรมาจิ",
+    "searchPlaceholder": "ค้นหาคะนะ..."
   },
   "vocab": {
     "title": "คำศัพท์ N5",

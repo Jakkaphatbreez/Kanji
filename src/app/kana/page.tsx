@@ -32,7 +32,7 @@ export default function KanaPage() {
         data={data}
         rowKey={row => row.char}
         getSearchText={row => `${row.char} ${row.romaji}`}
-        searchPlaceholder={t.vocab.searchPlaceholder}
+        searchPlaceholder={t.kana.searchPlaceholder}
         columns={[
           { header: t.kana.charColumn, accessor: row => row.char },
           { header: t.kana.romajiColumn, accessor: row => row.romaji },
