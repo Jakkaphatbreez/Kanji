@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { checkAnswer } from '@/lib/quiz/answer';
 import type { QuizQuestion } from '@/lib/quiz/types';
@@ -22,6 +22,13 @@ export function QuizSession({ questions, onFinish }: QuizSessionProps) {
 
   const question = questions[index];
 
+  // Release the "Next" lock only after the new index has actually committed,
+  // so a same-batch double-click can't sneak a second advance in before this
+  // render is applied (see QuizSession.test.tsx for the regression test).
+  useEffect(() => {
+    nextLockRef.current = false;
+  }, [index]);
+
   function handleAnswer(userInput: string) {
     if (answerLockRef.current) return;
     answerLockRef.current = true;
@@ -39,7 +46,6 @@ export function QuizSession({ questions, onFinish }: QuizSessionProps) {
       onFinish(score, questions.length);
     } else {
       setIndex(i => i + 1);
-      nextLockRef.current = false;
     }
   }
 
