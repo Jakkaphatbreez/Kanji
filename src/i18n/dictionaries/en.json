@@ -48,7 +48,6 @@
     "start": "Start quiz",
     "next": "Next question",
     "submit": "Submit",
-    "reducedCountNotice": "Not enough items in this category — question count reduced.",
     "correct": "Correct!",
     "incorrect": "Incorrect",
     "yourScore": "Your score",
