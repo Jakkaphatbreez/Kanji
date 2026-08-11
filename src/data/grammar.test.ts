@@ -6,13 +6,25 @@ describe('grammar data', () => {
     expect(grammarPatterns).toHaveLength(6);
   });
 
-  it('every entry has non-empty fields and an example containing the answerText', () => {
+  it('every entry has non-empty fields and 10 examples each containing the answerText', () => {
     for (const entry of grammarPatterns) {
       expect(entry.pattern.length).toBeGreaterThan(0);
       expect(entry.answerText.length).toBeGreaterThan(0);
       expect(entry.meaningTh.length).toBeGreaterThan(0);
       expect(entry.meaningEn.length).toBeGreaterThan(0);
-      expect(entry.example.jp).toContain(entry.answerText);
+      expect(entry.examples).toHaveLength(10);
+      for (const example of entry.examples) {
+        expect(example.jp).toContain(entry.answerText);
+        expect(example.th.length).toBeGreaterThan(0);
+        expect(example.en.length).toBeGreaterThan(0);
+      }
+    }
+  });
+
+  it('has no duplicate example sentences within a pattern', () => {
+    for (const entry of grammarPatterns) {
+      const sentences = entry.examples.map(e => e.jp);
+      expect(new Set(sentences).size).toBe(sentences.length);
     }
   });
 

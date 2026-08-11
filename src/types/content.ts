@@ -25,7 +25,7 @@ export interface ParticleEntry {
   particle: string;
   usageTh: string;
   usageEn: string;
-  example: ExampleSentence;
+  examples: ExampleSentence[];
 }
 
 export interface GrammarEntry {
@@ -33,5 +33,5 @@ export interface GrammarEntry {
   answerText: string;
   meaningTh: string;
   meaningEn: string;
-  example: ExampleSentence;
+  examples: ExampleSentence[];
 }

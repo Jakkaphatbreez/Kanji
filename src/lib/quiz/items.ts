@@ -23,18 +23,22 @@ export function getQuizItems(category: QuizCategory, language: Language): QuizIt
         group: e.category,
       }));
     case 'particle':
-      return particles.map(e => ({
-        id: `particle-${e.particle}`,
-        prompt: blankOut(e.example.jp, e.particle),
-        answer: e.particle,
-        group: 'particle',
-      }));
+      return particles.flatMap(e =>
+        e.examples.map((example, i) => ({
+          id: `particle-${e.particle}-${i}`,
+          prompt: blankOut(example.jp, e.particle),
+          answer: e.particle,
+          group: 'particle',
+        }))
+      );
     case 'grammar':
-      return grammarPatterns.map(e => ({
-        id: `grammar-${e.pattern}`,
-        prompt: blankOut(e.example.jp, e.answerText),
-        answer: e.answerText,
-        group: 'grammar',
-      }));
+      return grammarPatterns.flatMap(e =>
+        e.examples.map((example, i) => ({
+          id: `grammar-${e.pattern}-${i}`,
+          prompt: blankOut(example.jp, e.answerText),
+          answer: e.answerText,
+          group: 'grammar',
+        }))
+      );
   }
 }

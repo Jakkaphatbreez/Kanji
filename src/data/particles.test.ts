@@ -6,13 +6,23 @@ describe('particles data', () => {
     expect(particles).toHaveLength(8);
   });
 
-  it('every entry has non-empty usage text and an example that contains the particle', () => {
+  it('every entry has non-empty usage text and 10 examples that each contain the particle', () => {
     for (const entry of particles) {
       expect(entry.usageTh.length).toBeGreaterThan(0);
       expect(entry.usageEn.length).toBeGreaterThan(0);
-      expect(entry.example.jp).toContain(entry.particle);
-      expect(entry.example.th.length).toBeGreaterThan(0);
-      expect(entry.example.en.length).toBeGreaterThan(0);
+      expect(entry.examples).toHaveLength(10);
+      for (const example of entry.examples) {
+        expect(example.jp).toContain(entry.particle);
+        expect(example.th.length).toBeGreaterThan(0);
+        expect(example.en.length).toBeGreaterThan(0);
+      }
+    }
+  });
+
+  it('has no duplicate example sentences within a particle', () => {
+    for (const entry of particles) {
+      const sentences = entry.examples.map(e => e.jp);
+      expect(new Set(sentences).size).toBe(sentences.length);
     }
   });
 

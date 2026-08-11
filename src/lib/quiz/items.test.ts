@@ -14,7 +14,7 @@ describe('getQuizItems', () => {
     expect(itemsTh.map(i => i.answer)).not.toEqual(itemsEn.map(i => i.answer));
   });
 
-  it('blanks out the particle in the example sentence', () => {
+  it('blanks out the particle in every example sentence', () => {
     const items = getQuizItems('particle', 'en');
     for (const item of items) {
       expect(item.prompt).toContain('___');
@@ -22,11 +22,23 @@ describe('getQuizItems', () => {
     }
   });
 
-  it('blanks out the grammar answer text in the example sentence', () => {
+  it('blanks out the grammar answer text in every example sentence', () => {
     const items = getQuizItems('grammar', 'en');
     for (const item of items) {
       expect(item.prompt).toContain('___');
       expect(item.prompt).not.toContain(item.answer);
     }
+  });
+
+  it('generates one quiz item per particle example (8 particles × 10 examples)', () => {
+    const items = getQuizItems('particle', 'en');
+    expect(items).toHaveLength(80);
+    expect(new Set(items.map(i => i.id)).size).toBe(80);
+  });
+
+  it('generates one quiz item per grammar example (6 patterns × 10 examples)', () => {
+    const items = getQuizItems('grammar', 'en');
+    expect(items).toHaveLength(60);
+    expect(new Set(items.map(i => i.id)).size).toBe(60);
   });
 });

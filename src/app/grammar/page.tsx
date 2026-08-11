@@ -33,9 +33,13 @@ export default function GrammarPage() {
             <li key={p.particle} className="rounded border border-gray-200 p-3">
               <div className="text-lg font-semibold">{p.particle}</div>
               <div>{language === 'th' ? p.usageTh : p.usageEn}</div>
-              <div className="mt-1 text-gray-600">
-                {p.example.jp} — {language === 'th' ? p.example.th : p.example.en}
-              </div>
+              <ul className="mt-2 space-y-1 text-gray-600">
+                {p.examples.map((example, i) => (
+                  <li key={i}>
+                    {example.jp} — {language === 'th' ? example.th : example.en}
+                  </li>
+                ))}
+              </ul>
             </li>
           ))}
         </ul>
@@ -45,9 +49,13 @@ export default function GrammarPage() {
             <li key={g.pattern} className="rounded border border-gray-200 p-3">
               <div className="text-lg font-semibold">{g.pattern}</div>
               <div>{language === 'th' ? g.meaningTh : g.meaningEn}</div>
-              <div className="mt-1 text-gray-600">
-                {g.example.jp} — {language === 'th' ? g.example.th : g.example.en}
-              </div>
+              <ul className="mt-2 space-y-1 text-gray-600">
+                {g.examples.map((example, i) => (
+                  <li key={i}>
+                    {example.jp} — {language === 'th' ? example.th : example.en}
+                  </li>
+                ))}
+              </ul>
             </li>
           ))}
         </ul>
