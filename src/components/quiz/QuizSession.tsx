@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { checkAnswer } from '@/lib/quiz/answer';
 import type { QuizQuestion } from '@/lib/quiz/types';
@@ -17,21 +17,29 @@ export function QuizSession({ questions, onFinish }: QuizSessionProps) {
   const [index, setIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [feedback, setFeedback] = useState<'correct' | 'incorrect' | null>(null);
+  const answerLockRef = useRef(false);
+  const nextLockRef = useRef(false);
 
   const question = questions[index];
 
   function handleAnswer(userInput: string) {
+    if (answerLockRef.current) return;
+    answerLockRef.current = true;
     const isCorrect = checkAnswer(question, userInput);
     if (isCorrect) setScore(s => s + 1);
     setFeedback(isCorrect ? 'correct' : 'incorrect');
   }
 
   function handleNext() {
+    if (nextLockRef.current) return;
+    nextLockRef.current = true;
     setFeedback(null);
+    answerLockRef.current = false;
     if (index + 1 >= questions.length) {
       onFinish(score, questions.length);
     } else {
       setIndex(i => i + 1);
+      nextLockRef.current = false;
     }
   }
 

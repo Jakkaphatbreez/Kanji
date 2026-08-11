@@ -26,4 +26,21 @@ describe('QuizSession', () => {
 
     expect(onFinish).toHaveBeenCalledWith(1, 2);
   });
+
+  it('ignores a rapid double-click on Next and does not skip a question', () => {
+    const onFinish = vi.fn();
+    render(
+      <LanguageProvider>
+        <QuizSession questions={questions} onFinish={onFinish} />
+      </LanguageProvider>
+    );
+
+    fireEvent.click(screen.getByText('a'));
+    const nextButton = screen.getByText(/next|ข้อต่อไป/i);
+    fireEvent.click(nextButton);
+    fireEvent.click(nextButton);
+
+    expect(screen.getByText('い')).toBeInTheDocument();
+    expect(onFinish).not.toHaveBeenCalled();
+  });
 });
