@@ -9,9 +9,9 @@ interface QuizSetupProps {
   onStart: (category: QuizCategory, mode: QuizMode) => void;
 }
 
-type MainCategory = 'hiragana' | 'katakana' | 'vocab' | 'vocabExtra' | 'particle' | 'grammar';
+type MainCategory = 'hiragana' | 'katakana' | 'vocab' | 'vocabExtra' | 'kanji' | 'particle' | 'grammar';
 
-const MAIN_CATEGORIES: MainCategory[] = ['hiragana', 'katakana', 'vocab', 'vocabExtra', 'particle', 'grammar'];
+const MAIN_CATEGORIES: MainCategory[] = ['hiragana', 'katakana', 'vocab', 'vocabExtra', 'kanji', 'particle', 'grammar'];
 
 export function QuizSetup({ onStart }: QuizSetupProps) {
   const { t } = useLanguage();

@@ -4,6 +4,7 @@ export type QuizCategory =
   | 'katakana'
   | 'vocab'
   | `vocabExtra${number}`
+  | 'kanji'
   | 'particle'
   | 'grammar';
 export type QuizMode = 'multiple-choice' | 'typing';

@@ -3,6 +3,7 @@
     "home": "Home",
     "kana": "Kana",
     "vocab": "Vocabulary",
+    "kanji": "Kanji",
     "grammar": "Grammar",
     "quiz": "Quiz"
   },
@@ -36,6 +37,24 @@
       "greeting": "Greeting"
     }
   },
+  "kanji": {
+    "title": "N5 Kanji",
+    "searchPlaceholder": "Search kanji...",
+    "allCategories": "All categories",
+    "kanjiColumn": "Kanji",
+    "onColumn": "On-yomi",
+    "kunColumn": "Kun-yomi",
+    "meaningColumn": "Meaning",
+    "categoryColumn": "Category",
+    "categories": {
+      "numbers": "Numbers",
+      "time": "Time",
+      "peoplePlacesThings": "People/Places/Things",
+      "natureDirection": "Nature/Direction",
+      "verbs": "Verbs",
+      "adjectives": "Adjectives"
+    }
+  },
   "grammar": {
     "title": "Particles & Grammar",
     "particlesTab": "Particles",
@@ -60,6 +79,7 @@
       "katakana": "Katakana",
       "vocab": "Vocabulary",
       "vocabExtra": "Extra N5 Vocabulary",
+      "kanji": "Kanji",
       "particle": "Particle",
       "grammar": "Grammar"
     }

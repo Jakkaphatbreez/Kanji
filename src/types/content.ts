@@ -35,3 +35,14 @@ export interface GrammarEntry {
   meaningEn: string;
   examples: ExampleSentence[];
 }
+
+export type KanjiCategory = 'numbers' | 'time' | 'peoplePlacesThings' | 'natureDirection' | 'verbs' | 'adjectives';
+
+export interface KanjiEntry {
+  kanji: string;
+  on: string;
+  kun: string;
+  meaningTh: string;
+  meaningEn: string;
+  category: KanjiCategory;
+}

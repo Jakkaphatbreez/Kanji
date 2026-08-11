@@ -10,6 +10,7 @@ import { generateQuiz } from '@/lib/quiz/generate';
 import type { QuizCategory, QuizMode, QuizQuestion } from '@/lib/quiz/types';
 
 const CATEGORY_QUESTION_LIMIT: Partial<Record<QuizCategory, number>> = {
+  kanji: 50,
   particle: 50,
   grammar: 50,
 };

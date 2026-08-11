@@ -19,6 +19,9 @@ export function Nav() {
         <Link href="/vocab" className="hover:text-pink-600">
           {t.nav.vocab}
         </Link>
+        <Link href="/kanji" className="hover:text-pink-600">
+          {t.nav.kanji}
+        </Link>
         <Link href="/grammar" className="hover:text-pink-600">
           {t.nav.grammar}
         </Link>

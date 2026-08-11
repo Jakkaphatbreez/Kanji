@@ -3,6 +3,7 @@
     "home": "หน้าแรก",
     "kana": "คะนะ",
     "vocab": "คำศัพท์",
+    "kanji": "คันจิ",
     "grammar": "ไวยากรณ์",
     "quiz": "แบบทดสอบ"
   },
@@ -36,6 +37,24 @@
       "greeting": "คำทักทาย"
     }
   },
+  "kanji": {
+    "title": "คันจิ N5",
+    "searchPlaceholder": "ค้นหาคันจิ...",
+    "allCategories": "ทุกหมวด",
+    "kanjiColumn": "คันจิ",
+    "onColumn": "อนโยมิ",
+    "kunColumn": "คุนโยมิ",
+    "meaningColumn": "ความหมาย",
+    "categoryColumn": "หมวด",
+    "categories": {
+      "numbers": "ตัวเลข",
+      "time": "เวลา",
+      "peoplePlacesThings": "คน/สถานที่/สิ่งของ",
+      "natureDirection": "ธรรมชาติ/ทิศทาง",
+      "verbs": "คำกริยา",
+      "adjectives": "คำคุณศัพท์"
+    }
+  },
   "grammar": {
     "title": "คำช่วยและไวยากรณ์",
     "particlesTab": "คำช่วย",
@@ -60,6 +79,7 @@
       "katakana": "คาตากานะ",
       "vocab": "คำศัพท์",
       "vocabExtra": "คำศัพท์ N5 เพิ่มเติม",
+      "kanji": "คันจิ",
       "particle": "คำช่วย",
       "grammar": "ไวยากรณ์"
     }
