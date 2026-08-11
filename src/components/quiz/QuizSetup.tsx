@@ -8,7 +8,7 @@ interface QuizSetupProps {
   onStart: (category: QuizCategory, mode: QuizMode) => void;
 }
 
-const CATEGORIES: QuizCategory[] = ['hiragana', 'katakana', 'vocab', 'particle', 'grammar'];
+const CATEGORIES: QuizCategory[] = ['hiragana', 'katakana', 'vocab', 'vocabExtra', 'particle', 'grammar'];
 
 export function QuizSetup({ onStart }: QuizSetupProps) {
   const { t } = useLanguage();

@@ -26,6 +26,8 @@
     "kanaColumn": "คะนะ",
     "meaningColumn": "ความหมาย",
     "categoryColumn": "หมวด",
+    "coreTab": "N5 หลัก",
+    "extraTab": "N5 เพิ่มเติม",
     "categories": {
       "noun": "คำนาม",
       "verb": "คำกริยา",
@@ -57,6 +59,7 @@
       "hiragana": "ฮิรางานะ",
       "katakana": "คาตากานะ",
       "vocab": "คำศัพท์",
+      "vocabExtra": "คำศัพท์ N5 เพิ่มเติม",
       "particle": "คำช่วย",
       "grammar": "ไวยากรณ์"
     }

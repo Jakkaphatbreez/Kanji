@@ -26,6 +26,8 @@
     "kanaColumn": "Kana",
     "meaningColumn": "Meaning",
     "categoryColumn": "Category",
+    "coreTab": "Core N5",
+    "extraTab": "Extra N5",
     "categories": {
       "noun": "Noun",
       "verb": "Verb",
@@ -57,6 +59,7 @@
       "hiragana": "Hiragana",
       "katakana": "Katakana",
       "vocab": "Vocabulary",
+      "vocabExtra": "Extra N5 Vocabulary",
       "particle": "Particle",
       "grammar": "Grammar"
     }

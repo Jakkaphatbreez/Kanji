@@ -1,6 +1,7 @@
 import { hiragana } from '@/data/hiragana';
 import { katakana } from '@/data/katakana';
 import { vocabN5 } from '@/data/vocab-n5';
+import { vocabN5Extra } from '@/data/vocab-n5-extra';
 import { particles } from '@/data/particles';
 import { grammarPatterns } from '@/data/grammar';
 import type { Language, QuizCategory, QuizItem } from './types';
@@ -18,6 +19,13 @@ export function getQuizItems(category: QuizCategory, language: Language): QuizIt
     case 'vocab':
       return vocabN5.map(e => ({
         id: `vocab-${e.jp}`,
+        prompt: e.jp,
+        answer: language === 'th' ? e.meaningTh : e.meaningEn,
+        group: e.category,
+      }));
+    case 'vocabExtra':
+      return vocabN5Extra.map(e => ({
+        id: `vocab-extra-${e.jp}`,
         prompt: e.jp,
         answer: language === 'th' ? e.meaningTh : e.meaningEn,
         group: e.category,
