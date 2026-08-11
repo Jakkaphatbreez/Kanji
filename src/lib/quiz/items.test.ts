@@ -15,6 +15,14 @@ describe('getQuizItems', () => {
     expect(itemsTh.map(i => i.answer)).not.toEqual(itemsEn.map(i => i.answer));
   });
 
+  it('returns one item per kanji entry, using the active language for the meaning', () => {
+    const itemsTh = getQuizItems('kanji', 'th');
+    const itemsEn = getQuizItems('kanji', 'en');
+    expect(itemsTh.length).toBeGreaterThan(0);
+    expect(itemsTh.length).toBe(itemsEn.length);
+    expect(itemsTh.map(i => i.answer)).not.toEqual(itemsEn.map(i => i.answer));
+  });
+
   it('blanks out the particle in every example sentence', () => {
     const items = getQuizItems('particle', 'en');
     for (const item of items) {
@@ -31,10 +39,10 @@ describe('getQuizItems', () => {
     }
   });
 
-  it('generates one quiz item per particle example (8 particles × 10 examples)', () => {
+  it('generates one quiz item per particle example (18 particles × 1 example)', () => {
     const items = getQuizItems('particle', 'en');
-    expect(items).toHaveLength(80);
-    expect(new Set(items.map(i => i.id)).size).toBe(80);
+    expect(items).toHaveLength(18);
+    expect(new Set(items.map(i => i.id)).size).toBe(18);
   });
 
   it('generates one quiz item per grammar example (6 patterns × 10 examples)', () => {
