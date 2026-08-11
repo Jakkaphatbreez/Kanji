@@ -1,0 +1,68 @@
+{
+  "nav": {
+    "home": "Home",
+    "kana": "Kana",
+    "vocab": "Vocabulary",
+    "grammar": "Grammar",
+    "quiz": "Quiz"
+  },
+  "home": {
+    "title": "Learn Japanese N5",
+    "subtitle": "Hiragana, katakana, vocabulary, and basic grammar"
+  },
+  "kana": {
+    "title": "Kana Chart",
+    "hiragana": "Hiragana",
+    "katakana": "Katakana",
+    "charColumn": "Character",
+    "romajiColumn": "Romaji"
+  },
+  "vocab": {
+    "title": "N5 Vocabulary",
+    "searchPlaceholder": "Search vocabulary...",
+    "allCategories": "All categories",
+    "jpColumn": "Japanese",
+    "kanaColumn": "Kana",
+    "meaningColumn": "Meaning",
+    "categoryColumn": "Category",
+    "categories": {
+      "noun": "Noun",
+      "verb": "Verb",
+      "adjective": "Adjective",
+      "adverb": "Adverb",
+      "greeting": "Greeting"
+    }
+  },
+  "grammar": {
+    "title": "Particles & Grammar",
+    "particlesTab": "Particles",
+    "grammarTab": "Grammar"
+  },
+  "quiz": {
+    "title": "Quiz",
+    "selectCategory": "Select category",
+    "selectMode": "Select mode",
+    "multipleChoice": "Multiple choice",
+    "typing": "Typing",
+    "start": "Start quiz",
+    "next": "Next question",
+    "submit": "Submit",
+    "reducedCountNotice": "Not enough items in this category — question count reduced.",
+    "correct": "Correct!",
+    "incorrect": "Incorrect",
+    "yourScore": "Your score",
+    "playAgain": "Play again",
+    "typingPlaceholder": "Type your answer...",
+    "categories": {
+      "hiragana": "Hiragana",
+      "katakana": "Katakana",
+      "vocab": "Vocabulary",
+      "particle": "Particle",
+      "grammar": "Grammar"
+    }
+  },
+  "language": {
+    "th": "ไทย",
+    "en": "English"
+  }
+}
