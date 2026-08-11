@@ -9,6 +9,11 @@ import { getQuizItems } from '@/lib/quiz/items';
 import { generateQuiz } from '@/lib/quiz/generate';
 import type { QuizCategory, QuizMode, QuizQuestion } from '@/lib/quiz/types';
 
+const CATEGORY_QUESTION_LIMIT: Partial<Record<QuizCategory, number>> = {
+  particle: 50,
+  grammar: 50,
+};
+
 type Stage =
   | { name: 'setup' }
   | { name: 'active'; questions: QuizQuestion[] }
@@ -20,7 +25,8 @@ export default function QuizPage() {
 
   function handleStart(category: QuizCategory, mode: QuizMode) {
     const items = getQuizItems(category, language);
-    const { questions } = generateQuiz(items, mode, items.length);
+    const count = CATEGORY_QUESTION_LIMIT[category] ?? items.length;
+    const { questions } = generateQuiz(items, mode, count);
     setStage({ name: 'active', questions });
   }
 
