@@ -64,7 +64,7 @@ export function BombGame() {
           className="mb-4"
           style={state.status === 'playing' ? { animation: 'plane-fly 3s ease-in-out infinite' } : undefined}
         >
-          <WarPlane className="h-14 w-32" />
+          <WarPlane className="block h-auto w-48" />
         </div>
         {state.status === 'gameover' ? (
           <GameOverOverlay score={state.score} onPlayAgain={handleStart} />
