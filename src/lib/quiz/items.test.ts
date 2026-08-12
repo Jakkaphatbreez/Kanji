@@ -39,10 +39,10 @@ describe('getQuizItems', () => {
     }
   });
 
-  it('generates one quiz item per particle example (18 particles × 1 example)', () => {
+  it('generates one quiz item per particle example (18 particles × 10 examples)', () => {
     const items = getQuizItems('particle', 'en');
-    expect(items).toHaveLength(18);
-    expect(new Set(items.map(i => i.id)).size).toBe(18);
+    expect(items).toHaveLength(180);
+    expect(new Set(items.map(i => i.id)).size).toBe(180);
   });
 
   it('generates one quiz item per grammar example (6 patterns × 10 examples)', () => {
