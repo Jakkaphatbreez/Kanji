@@ -24,8 +24,8 @@ describe('getLevelForScore', () => {
     expect(getLevelForScore(100)).toEqual(LEVELS[4]);
   });
 
-  it('lane count only increases at score 10 and never decreases afterward', () => {
-    const laneCounts = [0, 5, 10, 15, 20, 100].map(s => getLevelForScore(s).laneCount);
-    expect(laneCounts).toEqual([1, 1, 2, 2, 2, 2]);
+  it('fall duration only decreases as score rises and never increases', () => {
+    const durations = [0, 5, 10, 15, 20, 100].map(s => getLevelForScore(s).fallDurationMs);
+    expect(durations).toEqual([6000, 5000, 4500, 4000, 3500, 3500]);
   });
 });

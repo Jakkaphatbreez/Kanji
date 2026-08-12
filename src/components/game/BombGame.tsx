@@ -7,7 +7,6 @@ import { Lane } from './Lane';
 import { HeartsDisplay } from './HeartsDisplay';
 import { ScoreDisplay } from './ScoreDisplay';
 import { GameOverOverlay } from './GameOverOverlay';
-import { WarPlane } from './WarPlane';
 
 const MAX_HEARTS = 3;
 
@@ -52,6 +51,8 @@ export function BombGame() {
     );
   }
 
+  const bomb = state.bombs[0];
+
   return (
     <div className="mx-auto max-w-4xl">
       <h1 className="text-3xl font-bold text-indigo-900">{t.game.title}</h1>
@@ -59,26 +60,18 @@ export function BombGame() {
         <HeartsDisplay hearts={state.hearts} maxHearts={MAX_HEARTS} />
         <ScoreDisplay score={state.score} />
       </div>
-      <div className="relative overflow-hidden rounded-xl border-4 border-slate-800 bg-gradient-to-b from-slate-600 via-slate-500 to-slate-400 p-6 shadow-xl">
-        <div
-          className="mb-4 inline-block"
-          style={state.status === 'playing' ? { animation: 'plane-fly 6s linear infinite' } : undefined}
-        >
-          <WarPlane className="block h-auto w-48" />
-        </div>
+      <div className="relative overflow-hidden rounded-xl border-4 border-slate-800 bg-[url('/battlefield.png')] bg-cover bg-center p-6 shadow-xl">
         {state.status === 'gameover' ? (
           <GameOverOverlay score={state.score} onPlayAgain={handleStart} />
         ) : (
-          <div className="flex flex-wrap justify-center gap-6">
-            {state.bombs.map(bomb => (
-              <Lane
-                key={bomb.laneId}
-                bomb={bomb}
-                onFortClick={choice => handleFortClick(bomb.laneId, bomb.spawnId, choice, bomb.question.correctAnswer)}
-                onBombLanded={() => handleBombLanded(bomb.laneId, bomb.spawnId)}
-                onExplosionEnd={() => handleExplosionEnd(bomb.laneId, bomb.spawnId)}
-              />
-            ))}
+          <div className="flex justify-center">
+            <Lane
+              bomb={bomb}
+              isPlaying={state.status === 'playing'}
+              onFortClick={choice => handleFortClick(bomb.laneId, bomb.spawnId, choice, bomb.question.correctAnswer)}
+              onBombLanded={() => handleBombLanded(bomb.laneId, bomb.spawnId)}
+              onExplosionEnd={() => handleExplosionEnd(bomb.laneId, bomb.spawnId)}
+            />
           </div>
         )}
       </div>

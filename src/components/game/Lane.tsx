@@ -2,18 +2,26 @@
 
 import type { Bomb } from '@/lib/game/types';
 import { BombIcon } from './BombIcon';
+import { WarPlane } from './WarPlane';
 
 interface LaneProps {
   bomb: Bomb;
+  isPlaying: boolean;
   onFortClick: (choice: string) => void;
   onBombLanded: () => void;
   onExplosionEnd: () => void;
 }
 
-export function Lane({ bomb, onFortClick, onBombLanded, onExplosionEnd }: LaneProps) {
+export function Lane({ bomb, isPlaying, onFortClick, onBombLanded, onExplosionEnd }: LaneProps) {
   return (
     <div className="relative w-64">
       <div className="relative h-72 w-full overflow-hidden">
+        <div
+          className="absolute top-0 left-0 inline-block"
+          style={isPlaying ? { animation: 'plane-fly 6s linear infinite' } : undefined}
+        >
+          <WarPlane className="block h-auto w-24" />
+        </div>
         {bomb.phase === 'falling' && (
           <div
             key={bomb.spawnId}

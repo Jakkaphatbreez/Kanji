@@ -108,24 +108,15 @@ describe('applyAnswer', () => {
     expect(next).toBe(state);
   });
 
-  it('spawns a second lane once score reaches the level-2 threshold (10)', () => {
+  it('keeps a single lane but falls faster after leveling up', () => {
     let state = createInitialState('en');
+    expect(state.bombs[0].fallDurationMs).toBe(6000);
     for (let i = 0; i < 10; i++) {
       const bomb = state.bombs[0];
       state = applyAnswer(state, { laneId: 0, spawnId: bomb.spawnId, outcome: 'correct', language: 'en' });
     }
     expect(state.score).toBe(10);
-    expect(state.bombs).toHaveLength(2);
-    expect(state.bombs.map(b => b.laneId).sort()).toEqual([0, 1]);
-  });
-
-  it('never assigns the same active kanji to two simultaneous lanes', () => {
-    let state = createInitialState('en');
-    for (let i = 0; i < 10; i++) {
-      const bomb = state.bombs[0];
-      state = applyAnswer(state, { laneId: 0, spawnId: bomb.spawnId, outcome: 'correct', language: 'en' });
-    }
-    expect(state.bombs).toHaveLength(2);
-    expect(state.bombs[0].question.id).not.toBe(state.bombs[1].question.id);
+    expect(state.bombs).toHaveLength(1);
+    expect(state.bombs[0].fallDurationMs).toBe(4500);
   });
 });

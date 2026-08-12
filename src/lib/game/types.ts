@@ -27,6 +27,5 @@ export interface GameState {
 
 export interface Level {
   minScore: number;
-  laneCount: number;
   fallDurationMs: number;
 }

@@ -30,14 +30,8 @@ export function createIdleState(): GameState {
 
 export function createInitialState(language: Language): GameState {
   const level = getLevelForScore(0);
-  let nextSpawnId = 1;
-  const bombs: Bomb[] = [];
-  for (let laneId = 0; laneId < level.laneCount; laneId++) {
-    const excludeIds = bombs.map(b => b.question.id);
-    bombs.push(spawnBomb(laneId, nextSpawnId, level.fallDurationMs, language, excludeIds));
-    nextSpawnId += 1;
-  }
-  return { status: 'playing', hearts: MAX_HEARTS, score: 0, bombs, nextSpawnId };
+  const bomb = spawnBomb(0, 1, level.fallDurationMs, language, []);
+  return { status: 'playing', hearts: MAX_HEARTS, score: 0, bombs: [bomb], nextSpawnId: 2 };
 }
 
 export function applyAnswer(state: GameState, params: ApplyAnswerParams): GameState {
@@ -62,9 +56,8 @@ export function applyAnswer(state: GameState, params: ApplyAnswerParams): GameSt
     if (state.hearts <= 0) {
       return { ...state, status: 'gameover' };
     }
-    const excludeIds = state.bombs.filter((_, i) => i !== bombIndex).map(b => b.question.id);
     const level = getLevelForScore(state.score);
-    const newBomb = spawnBomb(laneId, state.nextSpawnId, level.fallDurationMs, language, excludeIds);
+    const newBomb = spawnBomb(laneId, state.nextSpawnId, level.fallDurationMs, language, []);
     const bombs = state.bombs.map((b, i) => (i === bombIndex ? newBomb : b));
     return { ...state, bombs, nextSpawnId: state.nextSpawnId + 1 };
   }
@@ -77,19 +70,8 @@ export function applyAnswer(state: GameState, params: ApplyAnswerParams): GameSt
   }
 
   const level = getLevelForScore(score);
-  const excludeIdsForReplacement = state.bombs.filter((_, i) => i !== bombIndex).map(b => b.question.id);
-  const replacement = spawnBomb(laneId, state.nextSpawnId, level.fallDurationMs, language, excludeIdsForReplacement);
-  let bombs = state.bombs.map((b, i) => (i === bombIndex ? replacement : b));
-  let nextSpawnId = state.nextSpawnId + 1;
+  const replacement = spawnBomb(laneId, state.nextSpawnId, level.fallDurationMs, language, []);
+  const bombs = state.bombs.map((b, i) => (i === bombIndex ? replacement : b));
 
-  const existingLaneIds = new Set(bombs.map(b => b.laneId));
-  for (let newLaneId = 0; newLaneId < level.laneCount; newLaneId++) {
-    if (!existingLaneIds.has(newLaneId)) {
-      const excludeIdsForNewLane = bombs.map(b => b.question.id);
-      bombs = [...bombs, spawnBomb(newLaneId, nextSpawnId, level.fallDurationMs, language, excludeIdsForNewLane)];
-      nextSpawnId += 1;
-    }
-  }
-
-  return { ...state, hearts, score, bombs, nextSpawnId };
+  return { ...state, hearts, score, bombs, nextSpawnId: state.nextSpawnId + 1 };
 }
