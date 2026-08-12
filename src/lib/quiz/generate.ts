@@ -6,7 +6,7 @@ export interface GeneratedQuiz {
   requestedCount: number;
 }
 
-function buildMultipleChoiceQuestion(item: QuizItem, allItems: QuizItem[], distractorCount = 3): MultipleChoiceQuestion {
+export function buildMultipleChoiceQuestion(item: QuizItem, allItems: QuizItem[], distractorCount = 3): MultipleChoiceQuestion {
   const others = allItems.filter(i => i.id !== item.id && i.answer !== item.answer);
   const sameGroup = others.filter(i => i.group === item.group);
   const rest = others.filter(i => i.group !== item.group);
