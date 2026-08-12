@@ -11,13 +11,15 @@ interface LaneProps {
 }
 
 export function Lane({ bomb, onFortClick, onBombLanded, onExplosionEnd }: LaneProps) {
+  const isFalling = bomb.phase === 'falling';
+
   return (
-    <div className="relative w-64">
+    <div className="relative w-full max-w-md">
       <div className="relative h-72 w-full overflow-hidden">
-        {bomb.phase === 'falling' && (
+        {isFalling && (
           <div
             key={bomb.spawnId}
-            className="absolute left-1/2 -translate-x-1/2"
+            className="absolute bottom-0 left-1/2"
             style={{ animation: `bomb-fall ${bomb.fallDurationMs}ms linear forwards` }}
             onAnimationEnd={onBombLanded}
           >
@@ -27,7 +29,7 @@ export function Lane({ bomb, onFortClick, onBombLanded, onExplosionEnd }: LanePr
         {bomb.phase === 'exploding' && (
           <div
             key={`explosion-${bomb.spawnId}`}
-            className="absolute bottom-0 left-1/2 -translate-x-1/2 text-6xl"
+            className="absolute bottom-0 left-1/2 text-6xl"
             style={{ animation: 'bomb-explode 400ms ease-out forwards' }}
             onAnimationEnd={onExplosionEnd}
           >
@@ -35,17 +37,17 @@ export function Lane({ bomb, onFortClick, onBombLanded, onExplosionEnd }: LanePr
           </div>
         )}
       </div>
-      <div className="grid min-h-28 grid-cols-2 gap-3">
-        {bomb.phase === 'falling' &&
-          bomb.question.choices.map(choice => (
-            <button
-              key={choice}
-              onClick={() => onFortClick(choice)}
-              className="rounded border-2 border-pink-400 bg-pink-100 px-3 py-3 text-base font-semibold text-indigo-900 hover:bg-pink-200"
-            >
-              {choice}
-            </button>
-          ))}
+      <div className="grid grid-cols-4 gap-3">
+        {bomb.question.choices.map(choice => (
+          <button
+            key={choice}
+            onClick={() => onFortClick(choice)}
+            disabled={!isFalling}
+            className={`rounded border-2 border-pink-400 bg-pink-100 px-2 py-3 text-sm font-semibold text-indigo-900 hover:bg-pink-200 ${isFalling ? '' : 'invisible'}`}
+          >
+            {choice}
+          </button>
+        ))}
       </div>
     </div>
   );
