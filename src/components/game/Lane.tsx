@@ -45,7 +45,7 @@ export function Lane({ bomb, onFortClick, onBombLanded, onExplosionEnd }: LanePr
           </div>
         )}
       </div>
-      <div className="grid grid-cols-4 gap-3">
+      <div className="grid min-h-[72px] grid-cols-4 gap-3">
         {bomb.question.choices.map(choice => (
           <button
             key={choice}
