@@ -7,6 +7,7 @@ import { Lane } from './Lane';
 import { HeartsDisplay } from './HeartsDisplay';
 import { ScoreDisplay } from './ScoreDisplay';
 import { GameOverOverlay } from './GameOverOverlay';
+import { WarPlane } from './WarPlane';
 
 const MAX_HEARTS = 3;
 
@@ -64,10 +65,15 @@ export function BombGame() {
         {state.status === 'gameover' ? (
           <GameOverOverlay score={state.score} onPlayAgain={handleStart} />
         ) : (
-          <div className="flex justify-center">
+          <div className="relative flex justify-center">
+            <div
+              className="pointer-events-none absolute top-0 left-0 z-10 inline-block"
+              style={state.status === 'playing' ? { animation: 'plane-fly 6s linear infinite' } : undefined}
+            >
+              <WarPlane className="block h-auto w-32" />
+            </div>
             <Lane
               bomb={bomb}
-              isPlaying={state.status === 'playing'}
               onFortClick={choice => handleFortClick(bomb.laneId, bomb.spawnId, choice, bomb.question.correctAnswer)}
               onBombLanded={() => handleBombLanded(bomb.laneId, bomb.spawnId)}
               onExplosionEnd={() => handleExplosionEnd(bomb.laneId, bomb.spawnId)}
