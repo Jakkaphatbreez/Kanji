@@ -10,8 +10,16 @@ interface LaneProps {
   onExplosionEnd: () => void;
 }
 
+// Deterministic per-spawn horizontal spot, so the falling bomb and its
+// explosion (same spawnId, two separate renders) always land in the same place.
+function horizontalPercentForSpawn(spawnId: number): number {
+  const pseudoRandom = Math.abs(Math.sin(spawnId * 12.9898)) % 1;
+  return 20 + pseudoRandom * 60;
+}
+
 export function Lane({ bomb, onFortClick, onBombLanded, onExplosionEnd }: LaneProps) {
   const isFalling = bomb.phase === 'falling';
+  const leftPercent = horizontalPercentForSpawn(bomb.spawnId);
 
   return (
     <div className="relative w-full max-w-md">
@@ -19,8 +27,8 @@ export function Lane({ bomb, onFortClick, onBombLanded, onExplosionEnd }: LanePr
         {isFalling && (
           <div
             key={bomb.spawnId}
-            className="absolute bottom-0 left-1/2"
-            style={{ animation: `bomb-fall ${bomb.fallDurationMs}ms linear forwards` }}
+            className="absolute bottom-0"
+            style={{ left: `${leftPercent}%`, animation: `bomb-fall ${bomb.fallDurationMs}ms linear forwards` }}
             onAnimationEnd={onBombLanded}
           >
             <BombIcon label={bomb.question.prompt} />
@@ -29,8 +37,8 @@ export function Lane({ bomb, onFortClick, onBombLanded, onExplosionEnd }: LanePr
         {bomb.phase === 'exploding' && (
           <div
             key={`explosion-${bomb.spawnId}`}
-            className="absolute bottom-0 left-1/2 text-6xl"
-            style={{ animation: 'bomb-explode 400ms ease-out forwards' }}
+            className="absolute bottom-0 text-6xl"
+            style={{ left: `${leftPercent}%`, animation: 'bomb-explode 400ms ease-out forwards' }}
             onAnimationEnd={onExplosionEnd}
           >
             💥
