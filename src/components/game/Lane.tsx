@@ -22,8 +22,8 @@ export function Lane({ bomb, onFortClick, onBombLanded, onExplosionEnd }: LanePr
   const leftPercent = horizontalPercentForSpawn(bomb.spawnId);
 
   return (
-    <div className="relative w-full max-w-md">
-      <div className="relative h-72 w-full overflow-hidden">
+    <div className="relative w-full max-w-2xl">
+      <div className="relative h-96 w-full overflow-hidden">
         {isFalling && (
           <div
             key={bomb.spawnId}
