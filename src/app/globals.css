@@ -39,11 +39,10 @@ body {
 }
 
 @keyframes plane-fly {
-  0%,
-  100% {
-    transform: translateX(-40%);
+  from {
+    transform: translateX(-100%);
   }
-  50% {
-    transform: translateX(40%);
+  to {
+    transform: translateX(500%);
   }
 }

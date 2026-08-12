@@ -61,8 +61,8 @@ export function BombGame() {
       </div>
       <div className="relative overflow-hidden rounded-xl border-4 border-slate-800 bg-gradient-to-b from-slate-600 via-slate-500 to-slate-400 p-6 shadow-xl">
         <div
-          className="mb-4"
-          style={state.status === 'playing' ? { animation: 'plane-fly 3s ease-in-out infinite' } : undefined}
+          className="mb-4 inline-block"
+          style={state.status === 'playing' ? { animation: 'plane-fly 6s linear infinite' } : undefined}
         >
           <WarPlane className="block h-auto w-48" />
         </div>
