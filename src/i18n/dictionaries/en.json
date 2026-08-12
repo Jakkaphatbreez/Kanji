@@ -5,7 +5,8 @@
     "vocab": "Vocabulary",
     "kanji": "Kanji",
     "grammar": "Grammar",
-    "quiz": "Quiz"
+    "quiz": "Quiz",
+    "game": "Game"
   },
   "home": {
     "title": "Learn Japanese N5",
@@ -83,6 +84,14 @@
       "particle": "Particle",
       "grammar": "Grammar"
     }
+  },
+  "game": {
+    "title": "Bomb Drop Game",
+    "start": "Start Game",
+    "score": "Score",
+    "gameOver": "Game Over",
+    "finalScore": "Final Score",
+    "playAgain": "Play Again"
   },
   "language": {
     "th": "ไทย",

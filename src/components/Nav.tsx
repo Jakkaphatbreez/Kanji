@@ -28,6 +28,9 @@ export function Nav() {
         <Link href="/quiz" className="hover:text-pink-600">
           {t.nav.quiz}
         </Link>
+        <Link href="/game" className="hover:text-pink-600">
+          {t.nav.game}
+        </Link>
       </div>
       <LanguageToggle />
     </nav>
