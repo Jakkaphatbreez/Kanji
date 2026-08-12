@@ -37,3 +37,13 @@ body {
     opacity: 0;
   }
 }
+
+@keyframes plane-fly {
+  0%,
+  100% {
+    transform: translateX(-40%);
+  }
+  50% {
+    transform: translateX(40%);
+  }
+}
