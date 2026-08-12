@@ -11,23 +11,27 @@ interface LaneProps {
 
 export function Lane({ bomb, onFortClick, onBombLanded, onExplosionEnd }: LaneProps) {
   return (
-    <div className="relative w-40">
-      <div className="relative h-48 w-full overflow-hidden">
+    <div className="relative w-64">
+      <div className="relative h-72 w-full overflow-hidden">
         {bomb.phase === 'falling' && (
           <div
             key={bomb.spawnId}
-            className="absolute left-1/2 -translate-x-1/2 text-center"
+            className="absolute left-1/2 -translate-x-1/2"
             style={{ animation: `bomb-fall ${bomb.fallDurationMs}ms linear forwards` }}
             onAnimationEnd={onBombLanded}
           >
-            <div className="text-4xl">💣</div>
-            <div className="text-2xl font-bold text-indigo-900">{bomb.question.prompt}</div>
+            <div className="relative flex items-center justify-center text-8xl leading-none">
+              💣
+              <span className="absolute top-[46%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl font-bold text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.9)]">
+                {bomb.question.prompt}
+              </span>
+            </div>
           </div>
         )}
         {bomb.phase === 'exploding' && (
           <div
             key={`explosion-${bomb.spawnId}`}
-            className="absolute bottom-0 left-1/2 -translate-x-1/2 text-5xl"
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 text-6xl"
             style={{ animation: 'bomb-explode 400ms ease-out forwards' }}
             onAnimationEnd={onExplosionEnd}
           >
@@ -36,12 +40,12 @@ export function Lane({ bomb, onFortClick, onBombLanded, onExplosionEnd }: LanePr
         )}
       </div>
       {bomb.phase === 'falling' && (
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-2 gap-3">
           {bomb.question.choices.map(choice => (
             <button
               key={choice}
               onClick={() => onFortClick(choice)}
-              className="rounded border-2 border-pink-400 bg-pink-100 px-2 py-2 text-sm font-semibold text-indigo-900 hover:bg-pink-200"
+              className="rounded border-2 border-pink-400 bg-pink-100 px-3 py-3 text-base font-semibold text-indigo-900 hover:bg-pink-200"
             >
               {choice}
             </button>
