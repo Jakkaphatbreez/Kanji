@@ -51,6 +51,7 @@ export function applyAnswer(state: GameState, params: ApplyAnswerParams): GameSt
   if (bomb.spawnId !== spawnId) return state;
 
   if (outcome === 'missed') {
+    if (bomb.phase !== 'falling') return state;
     const hearts = state.hearts - 1;
     const bombs = state.bombs.map((b, i) => (i === bombIndex ? { ...b, phase: 'exploding' as const } : b));
     return { ...state, hearts, bombs };

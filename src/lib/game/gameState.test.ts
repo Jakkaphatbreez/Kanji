@@ -63,6 +63,17 @@ describe('applyAnswer', () => {
     expect(next.bombs[0].spawnId).toBe(bomb.spawnId);
   });
 
+  it('ignores a duplicate missed event for a bomb that is already exploding', () => {
+    const state = createInitialState('en');
+    const bomb = state.bombs[0];
+    const afterFirstMiss = applyAnswer(state, { laneId: 0, spawnId: bomb.spawnId, outcome: 'missed', language: 'en' });
+    expect(afterFirstMiss.hearts).toBe(2);
+    expect(afterFirstMiss.bombs[0].phase).toBe('exploding');
+    const next = applyAnswer(afterFirstMiss, { laneId: 0, spawnId: bomb.spawnId, outcome: 'missed', language: 'en' });
+    expect(next.hearts).toBe(2);
+    expect(next).toBe(afterFirstMiss);
+  });
+
   it('respawns the lane on explosionEnd after a miss, if hearts remain', () => {
     let state = createInitialState('en');
     const bomb = state.bombs[0];
