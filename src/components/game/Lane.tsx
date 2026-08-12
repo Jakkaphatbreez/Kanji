@@ -1,6 +1,7 @@
 'use client';
 
 import type { Bomb } from '@/lib/game/types';
+import { BombIcon } from './BombIcon';
 
 interface LaneProps {
   bomb: Bomb;
@@ -20,12 +21,7 @@ export function Lane({ bomb, onFortClick, onBombLanded, onExplosionEnd }: LanePr
             style={{ animation: `bomb-fall ${bomb.fallDurationMs}ms linear forwards` }}
             onAnimationEnd={onBombLanded}
           >
-            <div className="relative flex items-center justify-center text-8xl leading-none">
-              💣
-              <span className="absolute top-[46%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl font-bold text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.9)]">
-                {bomb.question.prompt}
-              </span>
-            </div>
+            <BombIcon label={bomb.question.prompt} />
           </div>
         )}
         {bomb.phase === 'exploding' && (
