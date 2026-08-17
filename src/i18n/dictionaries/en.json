@@ -3,12 +3,14 @@
     "home": "Home",
     "kana": "Kana",
     "vocab": "Vocabulary",
+    "kanji": "Kanji",
     "grammar": "Grammar",
-    "quiz": "Quiz"
+    "quiz": "Quiz",
+    "game": "Game"
   },
   "home": {
     "title": "Learn Japanese N5",
-    "subtitle": "Hiragana, katakana, vocabulary, and basic grammar"
+    "subtitle": "Hiragana, katakana, vocabulary, kanji, and basic grammar"
   },
   "kana": {
     "title": "Kana Chart",
@@ -26,12 +28,32 @@
     "kanaColumn": "Kana",
     "meaningColumn": "Meaning",
     "categoryColumn": "Category",
+    "coreTab": "Core N5",
+    "extraTab": "Extra N5",
     "categories": {
       "noun": "Noun",
       "verb": "Verb",
       "adjective": "Adjective",
       "adverb": "Adverb",
       "greeting": "Greeting"
+    }
+  },
+  "kanji": {
+    "title": "N5 Kanji",
+    "searchPlaceholder": "Search kanji...",
+    "allCategories": "All categories",
+    "kanjiColumn": "Kanji",
+    "onColumn": "On-yomi",
+    "kunColumn": "Kun-yomi",
+    "meaningColumn": "Meaning",
+    "categoryColumn": "Category",
+    "categories": {
+      "numbers": "Numbers",
+      "time": "Time",
+      "peoplePlacesThings": "People/Places/Things",
+      "natureDirection": "Nature/Direction",
+      "verbs": "Verbs",
+      "adjectives": "Adjectives"
     }
   },
   "grammar": {
@@ -48,7 +70,6 @@
     "start": "Start quiz",
     "next": "Next question",
     "submit": "Submit",
-    "reducedCountNotice": "Not enough items in this category — question count reduced.",
     "correct": "Correct!",
     "incorrect": "Incorrect",
     "yourScore": "Your score",
@@ -58,9 +79,19 @@
       "hiragana": "Hiragana",
       "katakana": "Katakana",
       "vocab": "Vocabulary",
+      "vocabExtra": "Extra N5 Vocabulary",
+      "kanji": "Kanji",
       "particle": "Particle",
       "grammar": "Grammar"
     }
+  },
+  "game": {
+    "title": "Bomb Drop Game",
+    "start": "Start Game",
+    "score": "Score",
+    "gameOver": "Game Over",
+    "finalScore": "Final Score",
+    "playAgain": "Play Again"
   },
   "language": {
     "th": "ไทย",

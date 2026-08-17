@@ -9,13 +9,13 @@ export function LanguageToggle() {
     <div className="flex gap-2 text-sm">
       <button
         onClick={() => setLanguage('th')}
-        className={language === 'th' ? 'font-bold underline' : 'text-gray-500'}
+        className={language === 'th' ? 'font-bold text-pink-600 underline' : 'text-gray-500'}
       >
         {t.language.th}
       </button>
       <button
         onClick={() => setLanguage('en')}
-        className={language === 'en' ? 'font-bold underline' : 'text-gray-500'}
+        className={language === 'en' ? 'font-bold text-pink-600 underline' : 'text-gray-500'}
       >
         {t.language.en}
       </button>

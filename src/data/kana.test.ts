@@ -2,11 +2,11 @@ import { describe, it, expect } from 'vitest';
 import { hiragana } from './hiragana';
 import { katakana } from './katakana';
 
-const KANA_GROUPS = ['a', 'ka', 'sa', 'ta', 'na', 'ha', 'ma', 'ya', 'ra', 'wa', 'n'];
+const KANA_GROUPS = ['a', 'ka', 'sa', 'ta', 'na', 'ha', 'ma', 'ya', 'ra', 'wa', 'n', 'ga', 'za', 'da', 'ba', 'pa'];
 
 describe('hiragana data', () => {
-  it('has 46 entries', () => {
-    expect(hiragana).toHaveLength(46);
+  it('has 69 entries', () => {
+    expect(hiragana).toHaveLength(69);
   });
 
   it('every entry has a non-empty char, romaji, and known group', () => {
@@ -24,8 +24,8 @@ describe('hiragana data', () => {
 });
 
 describe('katakana data', () => {
-  it('has 46 entries', () => {
-    expect(katakana).toHaveLength(46);
+  it('has 69 entries', () => {
+    expect(katakana).toHaveLength(69);
   });
 
   it('every entry has a non-empty char, romaji, and known group', () => {

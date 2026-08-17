@@ -7,7 +7,7 @@ export default function HomePage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold">{t.home.title}</h1>
+      <h1 className="text-2xl font-bold text-indigo-900">{t.home.title}</h1>
       <p className="mt-2 text-gray-600">{t.home.subtitle}</p>
     </div>
   );

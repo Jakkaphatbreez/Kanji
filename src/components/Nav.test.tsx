@@ -13,7 +13,9 @@ describe('Nav', () => {
     expect(screen.getByText('หน้าแรก')).toBeInTheDocument();
     expect(screen.getByText('คะนะ')).toBeInTheDocument();
     expect(screen.getByText('คำศัพท์')).toBeInTheDocument();
+    expect(screen.getByText('คันจิ')).toBeInTheDocument();
     expect(screen.getByText('ไวยากรณ์')).toBeInTheDocument();
     expect(screen.getByText('แบบทดสอบ')).toBeInTheDocument();
+    expect(screen.getByText('เกม')).toBeInTheDocument();
   });
 });

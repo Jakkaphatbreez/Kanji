@@ -3,12 +3,14 @@
     "home": "หน้าแรก",
     "kana": "คะนะ",
     "vocab": "คำศัพท์",
+    "kanji": "คันจิ",
     "grammar": "ไวยากรณ์",
-    "quiz": "แบบทดสอบ"
+    "quiz": "แบบทดสอบ",
+    "game": "เกม"
   },
   "home": {
     "title": "เรียนภาษาญี่ปุ่น N5",
-    "subtitle": "ฮิรางานะ คาตากานะ คำศัพท์ และไวยากรณ์พื้นฐาน"
+    "subtitle": "ฮิรางานะ คาตากานะ คำศัพท์ คันจิ และไวยากรณ์พื้นฐาน"
   },
   "kana": {
     "title": "ตารางคะนะ",
@@ -26,12 +28,32 @@
     "kanaColumn": "คะนะ",
     "meaningColumn": "ความหมาย",
     "categoryColumn": "หมวด",
+    "coreTab": "N5 หลัก",
+    "extraTab": "N5 เพิ่มเติม",
     "categories": {
       "noun": "คำนาม",
       "verb": "คำกริยา",
       "adjective": "คำคุณศัพท์",
       "adverb": "คำวิเศษณ์",
       "greeting": "คำทักทาย"
+    }
+  },
+  "kanji": {
+    "title": "คันจิ N5",
+    "searchPlaceholder": "ค้นหาคันจิ...",
+    "allCategories": "ทุกหมวด",
+    "kanjiColumn": "คันจิ",
+    "onColumn": "อนโยมิ",
+    "kunColumn": "คุนโยมิ",
+    "meaningColumn": "ความหมาย",
+    "categoryColumn": "หมวด",
+    "categories": {
+      "numbers": "ตัวเลข",
+      "time": "เวลา",
+      "peoplePlacesThings": "คน/สถานที่/สิ่งของ",
+      "natureDirection": "ธรรมชาติ/ทิศทาง",
+      "verbs": "คำกริยา",
+      "adjectives": "คำคุณศัพท์"
     }
   },
   "grammar": {
@@ -48,7 +70,6 @@
     "start": "เริ่มทำแบบทดสอบ",
     "next": "ข้อต่อไป",
     "submit": "ส่งคำตอบ",
-    "reducedCountNotice": "มีคำในหมวดนี้ไม่พอ ระบบลดจำนวนคำถามให้",
     "correct": "ถูกต้อง!",
     "incorrect": "ไม่ถูกต้อง",
     "yourScore": "คะแนนของคุณ",
@@ -58,9 +79,19 @@
       "hiragana": "ฮิรางานะ",
       "katakana": "คาตากานะ",
       "vocab": "คำศัพท์",
+      "vocabExtra": "คำศัพท์ N5 เพิ่มเติม",
+      "kanji": "คันจิ",
       "particle": "คำช่วย",
       "grammar": "ไวยากรณ์"
     }
+  },
+  "game": {
+    "title": "เกมทิ้งระเบิด",
+    "start": "เริ่มเกม",
+    "score": "คะแนน",
+    "gameOver": "จบเกม",
+    "finalScore": "คะแนนสุดท้าย",
+    "playAgain": "เล่นอีกครั้ง"
   },
   "language": {
     "th": "ไทย",
