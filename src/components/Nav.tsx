@@ -28,6 +28,9 @@ export function Nav() {
         <Link href="/grammar" className="hover:text-pink-600">
           {t.nav.grammar}
         </Link>
+        <Link href="/study-plan" className="hover:text-pink-600">
+          {t.nav.studyPlan}
+        </Link>
         <Link href="/quiz" className="hover:text-pink-600">
           {t.nav.quiz}
         </Link>

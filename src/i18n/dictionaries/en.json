@@ -6,6 +6,7 @@
     "kanji": "Kanji",
     "write": "Write",
     "grammar": "Grammar",
+    "studyPlan": "Study Plan",
     "quiz": "Quiz",
     "game": "Game"
   },
@@ -87,6 +88,13 @@
       "negative": "Negative",
       "pastNegative": "Past negative"
     }
+  },
+  "studyPlan": {
+    "title": "N5 in 5 Months",
+    "subtitle": "A month-by-month, week-by-week study schedule built from this site's own content, aimed at passing N5.",
+    "monthLabel": "Month",
+    "exerciseButton": "Do this week's exercise",
+    "generalExerciseButton": "Go practice"
   },
   "quiz": {
     "title": "Quiz",
