@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { LanguageProvider, useLanguage } from './LanguageContext';
+import { LanguageProvider, useLanguage, getStoredLanguage } from './LanguageContext';
 
 function Consumer() {
   const { language, setLanguage, t } = useLanguage();
@@ -37,5 +37,25 @@ describe('LanguageProvider', () => {
     expect(screen.getByTestId('lang').textContent).toBe('en');
     expect(screen.getByTestId('text').textContent).toBe('Home');
     expect(window.localStorage.getItem('kanji-app-language')).toBe('en');
+  });
+});
+
+describe('getStoredLanguage', () => {
+  beforeEach(() => {
+    window.localStorage.clear();
+  });
+
+  it('returns th when nothing is stored', () => {
+    expect(getStoredLanguage()).toBe('th');
+  });
+
+  it('returns the stored language when valid', () => {
+    window.localStorage.setItem('kanji-app-language', 'en');
+    expect(getStoredLanguage()).toBe('en');
+  });
+
+  it('falls back to th for invalid stored data', () => {
+    window.localStorage.setItem('kanji-app-language', 'garbage');
+    expect(getStoredLanguage()).toBe('th');
   });
 });

@@ -56,7 +56,14 @@ export default function GrammarPage() {
         <ul className="space-y-4">
           {grammarPatterns.map(g => (
             <li key={g.pattern} className="rounded border border-pink-200 bg-white p-3">
-              <div className="text-lg font-semibold text-indigo-900">{g.pattern}</div>
+              <div className="flex items-center gap-2">
+                <div className="text-lg font-semibold text-indigo-900">{g.pattern}</div>
+                {g.bonusLevel && (
+                  <span className="rounded-full bg-amber-100 px-2 py-0.5 text-xs font-semibold text-amber-700">
+                    {t.grammar.bonusN4Label}
+                  </span>
+                )}
+              </div>
               <div>{language === 'th' ? g.meaningTh : g.meaningEn}</div>
               <ul className="mt-2 space-y-1 text-gray-600">
                 {g.examples.map((example, i) => (

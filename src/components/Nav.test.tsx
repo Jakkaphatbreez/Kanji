@@ -16,6 +16,8 @@ describe('Nav', () => {
     expect(screen.getByText('คันจิ')).toBeInTheDocument();
     expect(screen.getByText('เขียน')).toBeInTheDocument();
     expect(screen.getByText('ไวยากรณ์')).toBeInTheDocument();
+    expect(screen.getByText('แผนเรียน')).toBeInTheDocument();
+    expect(screen.getByText('อ่าน/ฟัง')).toBeInTheDocument();
     expect(screen.getByText('แบบทดสอบ')).toBeInTheDocument();
     expect(screen.getByText('เกม')).toBeInTheDocument();
   });

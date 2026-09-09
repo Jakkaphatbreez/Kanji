@@ -10,6 +10,11 @@ type Dictionary = typeof th;
 const dictionaries: Record<Language, Dictionary> = { th, en };
 const STORAGE_KEY = 'kanji-app-language';
 
+export function getStoredLanguage(): Language {
+  const stored = window.localStorage.getItem(STORAGE_KEY);
+  return stored === 'th' || stored === 'en' ? stored : 'th';
+}
+
 interface LanguageContextValue {
   language: Language;
   setLanguage: (lang: Language) => void;
@@ -22,10 +27,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguageState] = useState<Language>('th');
 
   useEffect(() => {
-    const stored = window.localStorage.getItem(STORAGE_KEY);
-    if (stored === 'th' || stored === 'en') {
-      setLanguageState(stored);
-    }
+    setLanguageState(getStoredLanguage());
   }, []);
 
   function setLanguage(lang: Language) {

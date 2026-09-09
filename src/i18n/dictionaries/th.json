@@ -6,6 +6,8 @@
     "kanji": "คันจิ",
     "write": "เขียน",
     "grammar": "ไวยากรณ์",
+    "studyPlan": "แผนเรียน",
+    "practice": "อ่าน/ฟัง",
     "quiz": "แบบทดสอบ",
     "game": "เกม"
   },
@@ -76,6 +78,7 @@
     "particlesTab": "คำช่วย",
     "grammarTab": "ไวยากรณ์",
     "conjugationTab": "การผันคำ",
+    "bonusN4Label": "โบนัส N4",
     "forms": {
       "dictionary": "รูปพจนานุกรม",
       "masu": "รูป ます",
@@ -87,6 +90,28 @@
       "negative": "ปฏิเสธ",
       "pastNegative": "ปฏิเสธอดีต"
     }
+  },
+  "studyPlan": {
+    "title": "N5 ใน 5 เดือน",
+    "subtitle": "ตารางเรียนแบบเดือนต่อเดือน สัปดาห์ต่อสัปดาห์ จากเนื้อหาทั้งหมดในเว็บนี้ เพื่อให้สอบ N5 ผ่าน",
+    "monthLabel": "เดือน",
+    "exerciseButton": "ทำแบบฝึกหัดสัปดาห์นี้",
+    "generalExerciseButton": "ไปฝึกทำโจทย์"
+  },
+  "practice": {
+    "title": "ฝึกอ่านและเรียงประโยค",
+    "subtitle": "บทความสั้นระดับ N5 และแบบฝึกเรียงประโยค โหมดฟังใช้เสียงสังเคราะห์ในตัวเบราว์เซอร์ — คุณภาพเสียงขึ้นกับเครื่องของคุณ ไม่ใช่เสียงคนพูดจริง",
+    "readingTab": "อ่านจับใจความ",
+    "listeningTab": "ฟัง",
+    "orderingTab": "เรียงประโยค",
+    "dailyCategory": "ชีวิตประจำวัน",
+    "taleCategory": "นิทานสั้น",
+    "backToList": "กลับไปรายการ",
+    "playAll": "เล่นทั้งหมด",
+    "showTranslation": "แสดงคำแปล",
+    "hideTranslation": "ซ่อนคำแปล",
+    "startQuestions": "ตอบคำถาม",
+    "checkLabel": "ตรวจคำตอบ"
   },
   "quiz": {
     "title": "แบบทดสอบ",

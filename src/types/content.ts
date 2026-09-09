@@ -34,6 +34,8 @@ export interface GrammarEntry {
   meaningTh: string;
   meaningEn: string;
   examples: ExampleSentence[];
+  /** Set when a pattern is commonly classified as N4 rather than N5 (kept as bonus content). */
+  bonusLevel?: 'N4';
 }
 
 export type KanjiCategory = 'numbers' | 'time' | 'peoplePlacesThings' | 'natureDirection' | 'verbs' | 'adjectives';
@@ -71,4 +73,34 @@ export interface ConjugationGroup {
   ruleEn: string;
   formIds: ConjugationFormId[];
   examples: ConjugationExample[];
+}
+
+export type StoryCategory = 'tale' | 'daily';
+
+export interface StorySentence {
+  jp: string;
+  th: string;
+  en: string;
+}
+
+export interface StoryQuestion {
+  questionJp: string;
+  choicesJp: string[];
+  correctIndex: number;
+}
+
+export interface Story {
+  id: string;
+  title: string;
+  category: StoryCategory;
+  sentences: StorySentence[];
+  questions: StoryQuestion[];
+}
+
+export interface SentenceOrderingItem {
+  id: string;
+  /** Word/phrase chunks in their correct sentence order. */
+  segments: string[];
+  translationTh: string;
+  translationEn: string;
 }
