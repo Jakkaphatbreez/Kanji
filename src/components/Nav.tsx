@@ -31,6 +31,9 @@ export function Nav() {
         <Link href="/study-plan" className="hover:text-pink-600">
           {t.nav.studyPlan}
         </Link>
+        <Link href="/practice" className="hover:text-pink-600">
+          {t.nav.practice}
+        </Link>
         <Link href="/quiz" className="hover:text-pink-600">
           {t.nav.quiz}
         </Link>

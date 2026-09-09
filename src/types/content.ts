@@ -74,3 +74,33 @@ export interface ConjugationGroup {
   formIds: ConjugationFormId[];
   examples: ConjugationExample[];
 }
+
+export type StoryCategory = 'tale' | 'daily';
+
+export interface StorySentence {
+  jp: string;
+  th: string;
+  en: string;
+}
+
+export interface StoryQuestion {
+  questionJp: string;
+  choicesJp: string[];
+  correctIndex: number;
+}
+
+export interface Story {
+  id: string;
+  title: string;
+  category: StoryCategory;
+  sentences: StorySentence[];
+  questions: StoryQuestion[];
+}
+
+export interface SentenceOrderingItem {
+  id: string;
+  /** Word/phrase chunks in their correct sentence order. */
+  segments: string[];
+  translationTh: string;
+  translationEn: string;
+}

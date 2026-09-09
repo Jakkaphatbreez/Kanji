@@ -7,6 +7,7 @@
     "write": "เขียน",
     "grammar": "ไวยากรณ์",
     "studyPlan": "แผนเรียน",
+    "practice": "อ่าน/ฟัง",
     "quiz": "แบบทดสอบ",
     "game": "เกม"
   },
@@ -96,6 +97,21 @@
     "monthLabel": "เดือน",
     "exerciseButton": "ทำแบบฝึกหัดสัปดาห์นี้",
     "generalExerciseButton": "ไปฝึกทำโจทย์"
+  },
+  "practice": {
+    "title": "ฝึกอ่านและเรียงประโยค",
+    "subtitle": "บทความสั้นระดับ N5 และแบบฝึกเรียงประโยค โหมดฟังใช้เสียงสังเคราะห์ในตัวเบราว์เซอร์ — คุณภาพเสียงขึ้นกับเครื่องของคุณ ไม่ใช่เสียงคนพูดจริง",
+    "readingTab": "อ่านจับใจความ",
+    "listeningTab": "ฟัง",
+    "orderingTab": "เรียงประโยค",
+    "dailyCategory": "ชีวิตประจำวัน",
+    "taleCategory": "นิทานสั้น",
+    "backToList": "กลับไปรายการ",
+    "playAll": "เล่นทั้งหมด",
+    "showTranslation": "แสดงคำแปล",
+    "hideTranslation": "ซ่อนคำแปล",
+    "startQuestions": "ตอบคำถาม",
+    "checkLabel": "ตรวจคำตอบ"
   },
   "quiz": {
     "title": "แบบทดสอบ",

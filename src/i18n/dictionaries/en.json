@@ -7,6 +7,7 @@
     "write": "Write",
     "grammar": "Grammar",
     "studyPlan": "Study Plan",
+    "practice": "Reading/Listening",
     "quiz": "Quiz",
     "game": "Game"
   },
@@ -96,6 +97,21 @@
     "monthLabel": "Month",
     "exerciseButton": "Do this week's exercise",
     "generalExerciseButton": "Go practice"
+  },
+  "practice": {
+    "title": "Reading & Sentence Practice",
+    "subtitle": "Short N5-level passages and sentence-building exercises. Listening uses your browser's built-in speech synthesis — voice quality depends on your device, and it isn't a real human recording.",
+    "readingTab": "Reading Comprehension",
+    "listeningTab": "Listening",
+    "orderingTab": "Sentence Ordering",
+    "dailyCategory": "Daily Life",
+    "taleCategory": "Short Tales",
+    "backToList": "Back to list",
+    "playAll": "Play all",
+    "showTranslation": "Show translation",
+    "hideTranslation": "Hide translation",
+    "startQuestions": "Answer questions",
+    "checkLabel": "Check"
   },
   "quiz": {
     "title": "Quiz",
