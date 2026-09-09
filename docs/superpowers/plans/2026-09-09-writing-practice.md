@@ -298,13 +298,13 @@ afterEach(() => {
 describe('StrokeOrderAnimation', () => {
   it('renders one animated path per stroke', () => {
     const { container } = render(<StrokeOrderAnimation strokes={STROKES} speed="normal" playToken={0} />);
-    const animatedGroup = container.querySelectorAll('svg > g')[1];
+    const animatedGroup = container.querySelectorAll('svg > g')[2];
     expect(animatedGroup.querySelectorAll('path')).toHaveLength(STROKES.length);
   });
 
   it('reveals strokes one at a time as fake timers advance', () => {
     const { container } = render(<StrokeOrderAnimation strokes={STROKES} speed="normal" playToken={0} />);
-    const animatedPaths = container.querySelectorAll('svg > g')[1].querySelectorAll('path');
+    const animatedPaths = container.querySelectorAll('svg > g')[2].querySelectorAll('path');
 
     vi.advanceTimersByTime(0);
     expect(animatedPaths[0].style.strokeDashoffset).toBe('0');
@@ -329,7 +329,7 @@ describe('StrokeOrderAnimation', () => {
   it('restarts the animation from the beginning when playToken changes', () => {
     const { container, rerender } = render(<StrokeOrderAnimation strokes={STROKES} speed="normal" playToken={0} />);
     vi.advanceTimersByTime(10000);
-    const animatedPaths = container.querySelectorAll('svg > g')[1].querySelectorAll('path');
+    const animatedPaths = container.querySelectorAll('svg > g')[2].querySelectorAll('path');
     expect(animatedPaths[2].style.strokeDashoffset).toBe('0');
 
     rerender(<StrokeOrderAnimation strokes={STROKES} speed="normal" playToken={1} />);
