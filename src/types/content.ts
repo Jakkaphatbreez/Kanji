@@ -34,6 +34,8 @@ export interface GrammarEntry {
   meaningTh: string;
   meaningEn: string;
   examples: ExampleSentence[];
+  /** Set when a pattern is commonly classified as N4 rather than N5 (kept as bonus content). */
+  bonusLevel?: 'N4';
 }
 
 export type KanjiCategory = 'numbers' | 'time' | 'peoplePlacesThings' | 'natureDirection' | 'verbs' | 'adjectives';

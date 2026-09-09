@@ -32,4 +32,14 @@ describe('grammar data', () => {
     const values = grammarPatterns.map(e => e.pattern);
     expect(new Set(values).size).toBe(values.length);
   });
+
+  it('flags exactly the 3 N4-level bonus patterns (すぎます/やすい/にくい), everything else is N5', () => {
+    const bonusPatterns = grammarPatterns.filter(e => e.bonusLevel === 'N4').map(e => e.pattern);
+    expect(bonusPatterns.sort()).toEqual(['〜すぎます', '〜にくい', '〜やすい'].sort());
+    for (const entry of grammarPatterns) {
+      if (!bonusPatterns.includes(entry.pattern)) {
+        expect(entry.bonusLevel).toBeUndefined();
+      }
+    }
+  });
 });

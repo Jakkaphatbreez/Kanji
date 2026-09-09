@@ -418,6 +418,7 @@ export const grammarPatterns: GrammarEntry[] = [
     answerText: 'すぎます',
     meaningTh: 'แปลว่า "...มากเกินไป"',
     meaningEn: 'means "too much/too many..."',
+    bonusLevel: 'N4',
     examples: [
       { jp: 'たべすぎます。', th: 'กินมากเกินไป', en: 'I eat too much.' },
       { jp: 'のみすぎます。', th: 'ดื่มมากเกินไป', en: 'I drink too much.' },
@@ -430,6 +431,7 @@ export const grammarPatterns: GrammarEntry[] = [
     answerText: 'やすい',
     meaningTh: 'แปลว่า "...ง่าย" (ต่อท้ายก้านกริยา ます)',
     meaningEn: 'means "easy to do..." (attaches to the verb ます-stem)',
+    bonusLevel: 'N4',
     examples: [
       { jp: 'このほんはよみやすいです。', th: 'หนังสือเล่มนี้อ่านง่าย', en: 'This book is easy to read.' },
       { jp: 'このペンはかきやすいです。', th: 'ปากกาด้ามนี้เขียนง่าย', en: 'This pen is easy to write with.' },
@@ -442,6 +444,7 @@ export const grammarPatterns: GrammarEntry[] = [
     answerText: 'にくい',
     meaningTh: 'แปลว่า "...ยาก" (ต่อท้ายก้านกริยา ます)',
     meaningEn: 'means "difficult to do..." (attaches to the verb ます-stem)',
+    bonusLevel: 'N4',
     examples: [
       { jp: 'このかんじはおぼえにくいです。', th: 'คันจิตัวนี้จำยาก', en: 'This kanji is hard to remember.' },
       { jp: 'このくつはあるきにくいです。', th: 'รองเท้าคู่นี้เดินยาก', en: 'These shoes are hard to walk in.' },
