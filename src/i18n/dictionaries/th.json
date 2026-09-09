@@ -74,7 +74,19 @@
   "grammar": {
     "title": "คำช่วยและไวยากรณ์",
     "particlesTab": "คำช่วย",
-    "grammarTab": "ไวยากรณ์"
+    "grammarTab": "ไวยากรณ์",
+    "conjugationTab": "การผันคำ",
+    "forms": {
+      "dictionary": "รูปพจนานุกรม",
+      "masu": "รูป ます",
+      "nai": "รูป ない (ปฏิเสธ)",
+      "ta": "รูป た (อดีต)",
+      "te": "รูป て",
+      "present": "ปัจจุบัน",
+      "past": "อดีต",
+      "negative": "ปฏิเสธ",
+      "pastNegative": "ปฏิเสธอดีต"
+    }
   },
   "quiz": {
     "title": "แบบทดสอบ",

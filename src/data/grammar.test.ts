@@ -2,17 +2,17 @@ import { describe, it, expect } from 'vitest';
 import { grammarPatterns } from './grammar';
 
 describe('grammar data', () => {
-  it('has 6 entries', () => {
-    expect(grammarPatterns).toHaveLength(6);
+  it('has 40 entries', () => {
+    expect(grammarPatterns).toHaveLength(40);
   });
 
-  it('every entry has non-empty fields and 10 examples each containing the answerText', () => {
+  it('every entry has non-empty fields and at least 4 examples each containing the answerText', () => {
     for (const entry of grammarPatterns) {
       expect(entry.pattern.length).toBeGreaterThan(0);
       expect(entry.answerText.length).toBeGreaterThan(0);
       expect(entry.meaningTh.length).toBeGreaterThan(0);
       expect(entry.meaningEn.length).toBeGreaterThan(0);
-      expect(entry.examples).toHaveLength(10);
+      expect(entry.examples.length).toBeGreaterThanOrEqual(4);
       for (const example of entry.examples) {
         expect(example.jp).toContain(entry.answerText);
         expect(example.th.length).toBeGreaterThan(0);

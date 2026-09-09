@@ -74,7 +74,19 @@
   "grammar": {
     "title": "Particles & Grammar",
     "particlesTab": "Particles",
-    "grammarTab": "Grammar"
+    "grammarTab": "Grammar",
+    "conjugationTab": "Conjugation",
+    "forms": {
+      "dictionary": "Dictionary form",
+      "masu": "Masu-form",
+      "nai": "Nai-form (negative)",
+      "ta": "Ta-form (past)",
+      "te": "Te-form",
+      "present": "Present",
+      "past": "Past",
+      "negative": "Negative",
+      "pastNegative": "Past negative"
+    }
   },
   "quiz": {
     "title": "Quiz",
