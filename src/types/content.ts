@@ -46,3 +46,29 @@ export interface KanjiEntry {
   meaningEn: string;
   category: KanjiCategory;
 }
+
+export type ConjugationGroupId = 'group1' | 'group2' | 'group3' | 'iAdjective' | 'naAdjective' | 'copula';
+
+export type ConjugationFormId = 'dictionary' | 'masu' | 'nai' | 'ta' | 'te' | 'present' | 'past' | 'negative' | 'pastNegative';
+
+export interface ConjugationForm {
+  formId: ConjugationFormId;
+  value: string;
+}
+
+export interface ConjugationExample {
+  word: string;
+  meaningTh: string;
+  meaningEn: string;
+  forms: ConjugationForm[];
+}
+
+export interface ConjugationGroup {
+  groupId: ConjugationGroupId;
+  titleTh: string;
+  titleEn: string;
+  ruleTh: string;
+  ruleEn: string;
+  formIds: ConjugationFormId[];
+  examples: ConjugationExample[];
+}

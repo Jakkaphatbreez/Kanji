@@ -45,10 +45,10 @@ describe('getQuizItems', () => {
     expect(new Set(items.map(i => i.id)).size).toBe(180);
   });
 
-  it('generates one quiz item per grammar example (6 patterns × 10 examples)', () => {
+  it('generates one quiz item per grammar example', () => {
     const items = getQuizItems('grammar', 'en');
-    expect(items).toHaveLength(60);
-    expect(new Set(items.map(i => i.id)).size).toBe(60);
+    expect(items).toHaveLength(196);
+    expect(new Set(items.map(i => i.id)).size).toBe(196);
   });
 
   it('returns one item per word for a vocabExtra batch, matching that batch size', () => {

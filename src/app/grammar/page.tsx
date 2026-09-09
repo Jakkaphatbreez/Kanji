@@ -4,10 +4,11 @@ import { useState } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { particles } from '@/data/particles';
 import { grammarPatterns } from '@/data/grammar';
+import { conjugationGroups } from '@/data/conjugation';
 
 export default function GrammarPage() {
   const { t, language } = useLanguage();
-  const [tab, setTab] = useState<'particles' | 'grammar'>('particles');
+  const [tab, setTab] = useState<'particles' | 'grammar' | 'conjugation'>('particles');
 
   return (
     <div>
@@ -25,9 +26,15 @@ export default function GrammarPage() {
         >
           {t.grammar.grammarTab}
         </button>
+        <button
+          onClick={() => setTab('conjugation')}
+          className={tab === 'conjugation' ? 'font-bold text-pink-600 underline' : 'text-gray-500'}
+        >
+          {t.grammar.conjugationTab}
+        </button>
       </div>
 
-      {tab === 'particles' ? (
+      {tab === 'particles' && (
         <ul className="space-y-4">
           {particles.map(p => (
             <li key={p.particle} className="rounded border border-pink-200 bg-white p-3">
@@ -43,7 +50,9 @@ export default function GrammarPage() {
             </li>
           ))}
         </ul>
-      ) : (
+      )}
+
+      {tab === 'grammar' && (
         <ul className="space-y-4">
           {grammarPatterns.map(g => (
             <li key={g.pattern} className="rounded border border-pink-200 bg-white p-3">
@@ -56,6 +65,49 @@ export default function GrammarPage() {
                   </li>
                 ))}
               </ul>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {tab === 'conjugation' && (
+        <ul className="space-y-6">
+          {conjugationGroups.map(group => (
+            <li key={group.groupId} className="rounded border border-pink-200 bg-white p-3">
+              <div className="text-lg font-semibold text-indigo-900">
+                {language === 'th' ? group.titleTh : group.titleEn}
+              </div>
+              <div className="mt-1 text-sm text-gray-600">{language === 'th' ? group.ruleTh : group.ruleEn}</div>
+              <div className="mt-3 overflow-x-auto">
+                <table className="w-full min-w-max border-collapse text-left text-sm">
+                  <thead>
+                    <tr>
+                      <th className="border-b border-pink-300 px-2 py-1 font-semibold text-indigo-900">
+                        {language === 'th' ? 'ความหมาย' : 'Meaning'}
+                      </th>
+                      {group.formIds.map(formId => (
+                        <th key={formId} className="border-b border-pink-300 px-2 py-1 font-semibold text-indigo-900">
+                          {t.grammar.forms[formId]}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {group.examples.map(example => (
+                      <tr key={example.word}>
+                        <td className="border-b border-pink-100 px-2 py-1 text-gray-600">
+                          {language === 'th' ? example.meaningTh : example.meaningEn}
+                        </td>
+                        {example.forms.map(form => (
+                          <td key={form.formId} className="border-b border-pink-100 px-2 py-1">
+                            {form.value}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </li>
           ))}
         </ul>
