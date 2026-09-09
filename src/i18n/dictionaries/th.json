@@ -4,6 +4,7 @@
     "kana": "คะนะ",
     "vocab": "คำศัพท์",
     "kanji": "คันจิ",
+    "write": "เขียน",
     "grammar": "ไวยากรณ์",
     "quiz": "แบบทดสอบ",
     "game": "เกม"
@@ -55,6 +56,20 @@
       "verbs": "คำกริยา",
       "adjectives": "คำคุณศัพท์"
     }
+  },
+  "write": {
+    "title": "ฝึกเขียน",
+    "hiragana": "ฮิรางานะ",
+    "katakana": "คาตากานะ",
+    "kanji": "คันจิ",
+    "searchPlaceholder": "ค้นหาตัวอักษร...",
+    "play": "เล่นอนิเมชัน",
+    "replay": "เล่นซ้ำ",
+    "slow": "ช้า",
+    "normal": "ปกติ",
+    "strokeLabel": "จำนวนขีด",
+    "noAnimation": "ยังไม่มีข้อมูลอนิเมชันสำหรับตัวอักษรนี้",
+    "attribution": "ข้อมูลลำดับขีดจากโปรเจกต์ KanjiVG (CC BY-SA 3.0)"
   },
   "grammar": {
     "title": "คำช่วยและไวยากรณ์",
