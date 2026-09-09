@@ -4,6 +4,7 @@
     "kana": "Kana",
     "vocab": "Vocabulary",
     "kanji": "Kanji",
+    "write": "Write",
     "grammar": "Grammar",
     "quiz": "Quiz",
     "game": "Game"
@@ -55,6 +56,20 @@
       "verbs": "Verbs",
       "adjectives": "Adjectives"
     }
+  },
+  "write": {
+    "title": "Writing Practice",
+    "hiragana": "Hiragana",
+    "katakana": "Katakana",
+    "kanji": "Kanji",
+    "searchPlaceholder": "Search characters...",
+    "play": "Play",
+    "replay": "Replay",
+    "slow": "Slow",
+    "normal": "Normal",
+    "strokeLabel": "Strokes",
+    "noAnimation": "No stroke animation available for this character yet.",
+    "attribution": "Stroke order data from the KanjiVG project (CC BY-SA 3.0)."
   },
   "grammar": {
     "title": "Particles & Grammar",
