@@ -46,6 +46,17 @@ describe('stories data', () => {
     }
   });
 
+  it('every question has a non-empty bilingual translation and explanation', () => {
+    for (const story of stories) {
+      for (const question of story.questions) {
+        expect(question.questionTh.length).toBeGreaterThan(0);
+        expect(question.questionEn.length).toBeGreaterThan(0);
+        expect(question.explanationTh.length).toBeGreaterThan(0);
+        expect(question.explanationEn.length).toBeGreaterThan(0);
+      }
+    }
+  });
+
   it('has no duplicate story ids or titles', () => {
     const ids = stories.map(s => s.id);
     const titles = stories.map(s => s.title);

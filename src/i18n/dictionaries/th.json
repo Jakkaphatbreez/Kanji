@@ -124,6 +124,7 @@
     "submit": "ส่งคำตอบ",
     "correct": "ถูกต้อง!",
     "incorrect": "ไม่ถูกต้อง",
+    "correctAnswerLabel": "เฉลย",
     "yourScore": "คะแนนของคุณ",
     "playAgain": "เล่นอีกครั้ง",
     "typingPlaceholder": "พิมพ์คำตอบ...",

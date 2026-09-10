@@ -41,6 +41,7 @@ export function getQuizItems(category: QuizCategory, language: Language): QuizIt
         prompt: e.kanji,
         answer: language === 'th' ? e.meaningTh : e.meaningEn,
         group: e.category,
+        explanation: [e.on && `on: ${e.on}`, e.kun && `kun: ${e.kun}`].filter(Boolean).join(' / '),
       }));
     case 'particle':
       return particles.flatMap(e =>
@@ -49,6 +50,7 @@ export function getQuizItems(category: QuizCategory, language: Language): QuizIt
           prompt: blankOut(example.jp, e.particle),
           answer: e.particle,
           group: 'particle',
+          explanation: language === 'th' ? e.usageTh : e.usageEn,
         }))
       );
     case 'grammar':
@@ -58,6 +60,7 @@ export function getQuizItems(category: QuizCategory, language: Language): QuizIt
           prompt: blankOut(example.jp, e.answerText),
           answer: e.answerText,
           group: 'grammar',
+          explanation: language === 'th' ? e.meaningTh : e.meaningEn,
         }))
       );
     default:

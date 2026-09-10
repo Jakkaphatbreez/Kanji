@@ -14,6 +14,7 @@ export interface QuizItem {
   prompt: string;
   answer: string;
   group: string;
+  explanation?: string;
 }
 
 export interface MultipleChoiceQuestion {
@@ -21,12 +22,14 @@ export interface MultipleChoiceQuestion {
   prompt: string;
   choices: string[];
   correctAnswer: string;
+  explanation?: string;
 }
 
 export interface TypingQuestion {
   mode: 'typing';
   prompt: string;
   correctAnswer: string;
+  explanation?: string;
 }
 
 export type QuizQuestion = MultipleChoiceQuestion | TypingQuestion;

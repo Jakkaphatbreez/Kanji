@@ -66,6 +66,12 @@ export function QuizSession({ questions, onFinish }: QuizSessionProps) {
           <p className={feedback === 'correct' ? 'font-semibold text-green-600' : 'font-semibold text-red-600'}>
             {feedback === 'correct' ? t.quiz.correct : t.quiz.incorrect}
           </p>
+          {feedback === 'incorrect' && (
+            <p data-testid="correct-answer" className="text-gray-700">
+              {t.quiz.correctAnswerLabel}: {question.correctAnswer}
+            </p>
+          )}
+          {question.explanation && <p className="text-sm text-gray-600">{question.explanation}</p>}
           <button onClick={handleNext} className="mt-2 rounded bg-pink-500 px-4 py-2 text-white hover:bg-pink-600">
             {t.quiz.next}
           </button>

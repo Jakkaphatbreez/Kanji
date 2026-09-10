@@ -7,7 +7,14 @@ export interface GeneratedQuiz {
 }
 
 export function buildMultipleChoiceQuestion(item: QuizItem, allItems: QuizItem[], distractorCount = 3): MultipleChoiceQuestion {
-  const others = allItems.filter(i => i.id !== item.id && i.answer !== item.answer);
+  // Some prompts have more than one grammatically correct completion (e.g.
+  // "にほんごはむずかしいです___。" is valid with either ね or よ). Any other
+  // item that shares this exact blanked prompt proves its answer would also
+  // be correct here, so it must never be offered as a "wrong" distractor.
+  const collidingAnswers = new Set(
+    allItems.filter(i => i.prompt === item.prompt && i.answer !== item.answer).map(i => i.answer)
+  );
+  const others = allItems.filter(i => i.id !== item.id && i.answer !== item.answer && !collidingAnswers.has(i.answer));
   const sameGroup = others.filter(i => i.group === item.group);
   const rest = others.filter(i => i.group !== item.group);
 
@@ -32,11 +39,12 @@ export function buildMultipleChoiceQuestion(item: QuizItem, allItems: QuizItem[]
     prompt: item.prompt,
     choices: shuffle([item.answer, ...distractors]),
     correctAnswer: item.answer,
+    explanation: item.explanation,
   };
 }
 
 function buildTypingQuestion(item: QuizItem): QuizQuestion {
-  return { mode: 'typing', prompt: item.prompt, correctAnswer: item.answer };
+  return { mode: 'typing', prompt: item.prompt, correctAnswer: item.answer, explanation: item.explanation };
 }
 
 export function generateQuiz(items: QuizItem[], mode: QuizMode, requestedCount: number): GeneratedQuiz {

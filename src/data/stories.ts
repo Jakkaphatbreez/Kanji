@@ -44,8 +44,12 @@ export const stories: Story[] = [
     questions: [
       {
         questionJp: 'だれが いちばん さいごに よばれましたか。',
+        questionTh: 'ใครถูกเรียกมาช่วยเป็นคนสุดท้าย',
+        questionEn: 'Who was called to help last?',
         choicesJp: ['おばあさん', 'まご', 'いぬ', 'おじいさん'],
         correctIndex: 2,
+        explanationTh: 'เรื่องเล่าตามลำดับ: อาม่าเรียกหลาน หลานเรียกหมาเป็นคนสุดท้าย ก่อนที่หัวผักกาดจะถอนออกมาได้',
+        explanationEn: 'The story calls helpers in order — grandma called the grandchild, and the grandchild called the dog last, right before the turnip finally came out.',
       },
     ],
   },
@@ -86,8 +90,12 @@ export const stories: Story[] = [
     questions: [
       {
         questionJp: 'うさぎは どこで ねましたか。',
+        questionTh: 'กระต่ายไปนอนที่ไหน',
+        questionEn: 'Where did the rabbit go to sleep?',
         choicesJp: ['いえ', 'きの した', 'みち', 'やま'],
         correctIndex: 1,
+        explanationTh: 'ในเรื่องบอกตรงๆว่า "うさぎは きの したで ねました" (กระต่ายนอนหลับอยู่ใต้ต้นไม้)',
+        explanationEn: 'The story states directly, "うさぎは きの したで ねました" (The rabbit slept under a tree).',
       },
     ],
   },
@@ -116,8 +124,12 @@ export const stories: Story[] = [
     questions: [
       {
         questionJp: 'ももは なにを おいかけましたか。',
+        questionTh: 'โมโมะวิ่งไล่ตามอะไร',
+        questionEn: 'What did Momo chase?',
         choicesJp: ['とり', 'ちょうちょう', 'ねこ', 'いぬ'],
         correctIndex: 1,
+        explanationTh: 'ประโยค "ももは ちょうちょうを おいかけました" บอกตรงๆว่าโมโมะไล่ตามผีเสื้อ',
+        explanationEn: 'The sentence "ももは ちょうちょうを おいかけました" directly states Momo chased a butterfly.',
       },
     ],
   },
@@ -162,8 +174,12 @@ export const stories: Story[] = [
     questions: [
       {
         questionJp: 'なつ、キリギリスは なにを して いましたか。',
+        questionTh: 'ตอนหน้าร้อน ตั๊กแตนกำลังทำอะไร',
+        questionEn: 'What was the grasshopper doing in summer?',
         choicesJp: ['はたらいて いました', 'たべものを あつめて いました', 'うたを うたって いました', 'ねむって いました'],
         correctIndex: 2,
+        explanationTh: 'เรื่องบอกว่า "キリギリスは うたを うたって、あそんでばかり いました" (ตั๊กแตนร้องเพลงและเล่นสนุกทั้งวัน) ต่างจากมดที่ทำงานเก็บอาหาร',
+        explanationEn: 'The story says "キリギリスは うたを うたって、あそんでばかり いました" (the grasshopper sang songs and just played), unlike the ants who worked gathering food.',
       },
     ],
   },
@@ -196,8 +212,12 @@ export const stories: Story[] = [
     questions: [
       {
         questionJp: 'にわとりは いちにちに なんこ たまごを うみましたか。',
+        questionTh: 'ไก่ออกไข่วันละกี่ฟอง',
+        questionEn: 'How many eggs did the chicken lay per day?',
         choicesJp: ['いっこ', 'にこ', 'さんこ', 'ぜんぜん うみませんでした'],
         correctIndex: 0,
+        explanationTh: 'เรื่องบอกว่า "まいにち いちにち いっこ、きんの たまごが うまれました" (ทุกวันจะมีไข่ทองคำเกิดขึ้นวันละหนึ่งฟอง)',
+        explanationEn: 'The story says "まいにち いちにち いっこ、きんの たまごが うまれました" (every day, one golden egg was born).',
       },
     ],
   },
@@ -230,8 +250,12 @@ export const stories: Story[] = [
     questions: [
       {
         questionJp: 'さいごに、むらの ひとたちは きましたか。',
+        questionTh: 'สุดท้ายชาวบ้านมาช่วยไหม',
+        questionEn: 'In the end, did the villagers come?',
         choicesJp: ['きました', 'きませんでした', 'いぬが きました', 'おおかみが きました'],
         correctIndex: 1,
+        explanationTh: 'เพราะเด็กโกหกซ้ำๆ ครั้งสุดท้ายที่หมาป่ามาจริง ไม่มีใครมาช่วยเลยตามประโยค "だれも きませんでした"',
+        explanationEn: 'Because the boy lied repeatedly, the last time the wolf truly came, no one came to help — as the story says, "だれも きませんでした" (no one came).',
       },
     ],
   },
@@ -260,8 +284,12 @@ export const stories: Story[] = [
     questions: [
       {
         questionJp: 'さんばんめの こぶたの いえは なにで できて いましたか。',
+        questionTh: 'บ้านของลูกหมูตัวที่สามทำจากอะไร',
+        questionEn: 'What was the third pig\'s house made of?',
         choicesJp: ['わら', 'き', 'れんが', 'かみ'],
         correctIndex: 2,
+        explanationTh: 'เรื่องบอกว่า "さんばんめの こぶたは、れんがで いえを つくりました" (ลูกหมูตัวที่สามสร้างบ้านด้วยอิฐ)',
+        explanationEn: 'The story says "さんばんめの こぶたは、れんがで いえを つくりました" (the third pig built a house of bricks).',
       },
     ],
   },
@@ -306,8 +334,12 @@ export const stories: Story[] = [
     questions: [
       {
         questionJp: 'かべは だれが いちばん つよいと いいましたか。',
+        questionTh: 'กำแพงบอกว่าใครแข็งแกร่งที่สุด',
+        questionEn: 'Who did the wall say was the strongest?',
         choicesJp: ['たいよう', 'くも', 'かぜ', 'ねずみ'],
         correctIndex: 3,
+        explanationTh: 'กำแพงพูดว่า "ねずみの ほうが つよいです。ねずみは わたしに あなを あけます" (หนูแข็งแกร่งกว่า เพราะเจาะรูในตัวกำแพงได้)',
+        explanationEn: 'The wall said, "ねずみの ほうが つよいです。ねずみは わたしに あなを あけます" (the mouse is stronger — it can make a hole in me).',
       },
     ],
   },
@@ -344,8 +376,12 @@ export const stories: Story[] = [
     questions: [
       {
         questionJp: 'だれが すずめの したを きりましたか。',
+        questionTh: 'ใครเป็นคนตัดลิ้นนกกระจอก',
+        questionEn: 'Who cut the sparrow\'s tongue?',
         choicesJp: ['おじいさん', 'おばあさん', 'むすめ', 'いぬ'],
         correctIndex: 1,
+        explanationTh: 'เรื่องบอกว่า "おばあさんは おこって、すずめの したを きって しまいました" (คุณย่าโกรธจนตัดลิ้นนกกระจอก)',
+        explanationEn: 'The story says "おばあさんは おこって、すずめの したを きって しまいました" (grandma got angry and cut the sparrow\'s tongue).',
       },
     ],
   },
@@ -394,8 +430,12 @@ export const stories: Story[] = [
     questions: [
       {
         questionJp: 'たろうは うみの そこで だれに あいましたか。',
+        questionTh: 'ทาโร่ไปเจอใครที่ก้นทะเล',
+        questionEn: 'Who did Taro meet at the bottom of the sea?',
         choicesJp: ['かめ', 'おとひめさま', 'おじいさん', 'いぬ'],
         correctIndex: 1,
+        explanationTh: 'เรื่องบอกว่า "りゅうぐうじょうで、おとひめさまが たろうを もてなしました" (เจ้าหญิงโอโตฮิเมะต้อนรับทาโร่ที่วังใต้ทะเล) ส่วนเต่าเป็นผู้พาไปเท่านั้น',
+        explanationEn: 'The story says "りゅうぐうじょうで、おとひめさまが たろうを もてなしました" (Princess Otohime welcomed Taro at the Dragon Palace) — the turtle only guided him there.',
       },
     ],
   },
@@ -420,13 +460,21 @@ export const stories: Story[] = [
     questions: [
       {
         questionJp: 'たなかさんは なんじに おきますか。',
+        questionTh: 'คุณทานากะตื่นนอนกี่โมง',
+        questionEn: 'What time does Mr. Tanaka wake up?',
         choicesJp: ['六じ', '七じはん', '十二じ', '五じ'],
         correctIndex: 0,
+        explanationTh: 'ประโยคแรกบอกตรงๆว่า "たなかさんは まいあさ 六時に おきます" (คุณทานากะตื่นตอนหกโมงทุกเช้า)',
+        explanationEn: 'The first sentence directly says "たなかさんは まいあさ 六時に おきます" (Mr. Tanaka wakes up at six every morning).',
       },
       {
         questionJp: 'たなかさんは かえりに どこで かいものを しますか。',
+        questionTh: 'ระหว่างทางกลับบ้าน คุณทานากะไปซื้อของที่ไหน',
+        questionEn: 'Where does Mr. Tanaka shop on the way home?',
         choicesJp: ['かいしゃ', 'がっこう', 'スーパー', 'としょかん'],
         correctIndex: 2,
+        explanationTh: 'เรื่องบอกว่า "かえりに、スーパーで かいものを します" (ระหว่างกลับบ้านแวะซื้อของที่ซูเปอร์มาร์เก็ต)',
+        explanationEn: 'The story says "かえりに、スーパーで かいものを します" (on the way home, he shops at the supermarket).',
       },
     ],
   },
@@ -450,13 +498,21 @@ export const stories: Story[] = [
     questions: [
       {
         questionJp: 'ともだちは なにを わすれましたか。',
+        questionTh: 'เพื่อนลืมอะไรมา',
+        questionEn: 'What did the friend forget?',
         choicesJp: ['かさ', 'くつ', 'ほん', 'かばん'],
         correctIndex: 0,
+        explanationTh: 'เรื่องบอกว่า "ともだちは かさを わすれました" (เพื่อนลืมเอาร่มมา)',
+        explanationEn: 'The story says "ともだちは かさを わすれました" (my friend forgot their umbrella).',
       },
       {
         questionJp: 'あめは いつ やみましたか。',
+        questionTh: 'ฝนหยุดตกตอนไหน',
+        questionEn: 'When did the rain stop?',
         choicesJp: ['あさ', 'ひるまえ', 'ごご', 'よる'],
         correctIndex: 2,
+        explanationTh: 'เรื่องบอกว่า "ごごに なると、あめは やみました" (พอถึงตอนบ่ายฝนก็หยุดตก)',
+        explanationEn: 'The story says "ごごに なると、あめは やみました" (in the afternoon, the rain stopped).',
       },
     ],
   },
@@ -476,13 +532,21 @@ export const stories: Story[] = [
     questions: [
       {
         questionJp: 'どようびの あさ、なんじに おきますか。',
+        questionTh: 'เช้าวันเสาร์ตื่นกี่โมง',
+        questionEn: 'What time do I wake up on Saturday morning?',
         choicesJp: ['七じ', '八じ', '九じ', '十じ'],
         correctIndex: 3,
+        explanationTh: 'เรื่องบอกว่า "十じに おきて、ゆっくり あさごはんを たべます" (ตื่นตอนสิบโมง)',
+        explanationEn: 'The story says "十じに おきて、ゆっくり あさごはんを たべます" (I wake up at ten).',
       },
       {
         questionJp: 'にちようびは なにを しますか。',
+        questionTh: 'วันอาทิตย์ทำอะไร',
+        questionEn: 'What do I do on Sunday?',
         choicesJp: ['えいがを みます', 'そうじと せんたくを します', 'こうえんで あそびます', 'かいものを します'],
         correctIndex: 1,
+        explanationTh: 'เรื่องบอกว่า "にちようびは、へやを そうじして、せんたくを します" (วันอาทิตย์ทำความสะอาดห้องและซักผ้า)',
+        explanationEn: 'The story says "にちようびは、へやを そうじして、せんたくを します" (on Sunday, I clean my room and do laundry).',
       },
     ],
   },
@@ -502,13 +566,21 @@ export const stories: Story[] = [
     questions: [
       {
         questionJp: 'なぜ くだものを かいませんでしたか。',
+        questionTh: 'ทำไมถึงไม่ได้ซื้อผลไม้',
+        questionEn: 'Why didn\'t I buy fruit?',
         choicesJp: ['おいしくなかったから', 'たかかったから', 'なかったから', 'きらいだから'],
         correctIndex: 1,
+        explanationTh: 'เรื่องบอกว่า "くだものも かいたかったですが、たかかったです" (อยากซื้อผลไม้ด้วยแต่ราคาแพงไป)',
+        explanationEn: 'The story says "くだものも かいたかったですが、たかかったです" (I wanted to buy fruit too, but it was expensive).',
       },
       {
         questionJp: 'レジで どのくらい まちましたか。',
+        questionTh: 'รอคิวที่จุดชำระเงินนานแค่ไหน',
+        questionEn: 'How long did I wait at the register?',
         choicesJp: ['十ぷん', 'に十ぷん', '三十ぷん', 'いちじかん'],
         correctIndex: 1,
+        explanationTh: 'เรื่องบอกว่า "二十ぷん まちました" (รอประมาณยี่สิบนาที)',
+        explanationEn: 'The story says "二十ぷん まちました" (I waited about twenty minutes).',
       },
     ],
   },
@@ -528,13 +600,21 @@ export const stories: Story[] = [
     questions: [
       {
         questionJp: 'いしゃは なんと いいましたか。',
+        questionTh: 'หมอบอกว่าอย่างไร',
+        questionEn: 'What did the doctor say?',
         choicesJp: ['かぜです', 'びょうきじゃないです', 'たいへんです', 'げんきです'],
         correctIndex: 0,
+        explanationTh: 'เรื่องบอกว่า "いしゃは、かぜですと いいました" (หมอบอกว่าเป็นหวัด)',
+        explanationEn: 'The story says "いしゃは、かぜですと いいました" (the doctor said it was a cold).',
       },
       {
         questionJp: 'なんにち やすみましたか。',
+        questionTh: 'พักกี่วัน',
+        questionEn: 'How many days did I rest?',
         choicesJp: ['いちにち', 'ふつか', 'みっか', 'よっか'],
         correctIndex: 2,
+        explanationTh: 'เรื่องบอกว่า "三日 やすんで、げんきに なりました" (พักสามวันก็หายเป็นปกติ)',
+        explanationEn: 'The story says "三日 やすんで、げんきに なりました" (after resting for three days, I felt fine).',
       },
     ],
   },
@@ -554,13 +634,21 @@ export const stories: Story[] = [
     questions: [
       {
         questionJp: 'みんなで なにを よういしましたか。',
+        questionTh: 'ทุกคนช่วยกันเตรียมอะไร',
+        questionEn: 'What did everyone prepare together?',
         choicesJp: ['プレゼントと ほん', 'ケーキと ジュース', 'りょうりと おちゃ', 'はなと しゃしん'],
         correctIndex: 1,
+        explanationTh: 'เรื่องบอกว่า "ケーキと ジュースを よういしました" (เตรียมเค้กและน้ำผลไม้)',
+        explanationEn: 'The story says "ケーキと ジュースを よういしました" (we prepared cake and juice).',
       },
       {
         questionJp: 'ともだちは なにを もらって よろこびましたか。',
+        questionTh: 'เพื่อนดีใจที่ได้รับอะไร',
+        questionEn: 'What did the friend receive and become happy about?',
         choicesJp: ['ケーキ', 'おんがく', 'プレゼント', 'ジュース'],
         correctIndex: 2,
+        explanationTh: 'เรื่องบอกว่า "ともだちは、プレゼントを もらって よろこびました" (เพื่อนได้รับของขวัญแล้วดีใจ)',
+        explanationEn: 'The story says "ともだちは、プレゼントを もらって よろこびました" (my friend received a present and was happy).',
       },
     ],
   },
@@ -580,13 +668,21 @@ export const stories: Story[] = [
     questions: [
       {
         questionJp: '一じかんめは なんの じゅぎょうですか。',
+        questionTh: 'คาบแรกเป็นวิชาอะไร',
+        questionEn: 'What is the first period\'s class?',
         choicesJp: ['すうがく', 'たいいく', 'にほんご', 'としょかん'],
         correctIndex: 2,
+        explanationTh: 'เรื่องบอกว่า "一じかんめは、にほんごの じゅぎょうです" (คาบแรกเป็นวิชาภาษาญี่ปุ่น)',
+        explanationEn: 'The story says "一じかんめは、にほんごの じゅぎょうです" (the first period is Japanese class).',
       },
       {
         questionJp: 'なんじに いえへ かえりますか。',
+        questionTh: 'กลับบ้านกี่โมง',
+        questionEn: 'What time do I go home?',
         choicesJp: ['一じ', '二じ', '三じ', '四じ'],
         correctIndex: 2,
+        explanationTh: 'เรื่องบอกว่า "三じに、いえへ かえります" (กลับบ้านตอนบ่ายสามโมง)',
+        explanationEn: 'The story says "三じに、いえへ かえります" (I go home at three o\'clock).',
       },
     ],
   },
@@ -610,13 +706,21 @@ export const stories: Story[] = [
     questions: [
       {
         questionJp: 'でんしゃで どのくらい かかりますか。',
+        questionTh: 'นั่งรถไฟใช้เวลานานแค่ไหน',
+        questionEn: 'How long does it take by train?',
         choicesJp: ['一じかん', '二じかん', '三じかん', '四じかん'],
         correctIndex: 2,
+        explanationTh: 'เรื่องบอกว่า "でんしゃで 三じかん かかります" (นั่งรถไฟใช้เวลาสามชั่วโมง)',
+        explanationEn: 'The story says "でんしゃで 三じかん かかります" (it takes three hours by train).',
       },
       {
         questionJp: 'ホテルは もう よやくしましたか。',
+        questionTh: 'จองโรงแรมแล้วหรือยัง',
+        questionEn: 'Have I already booked the hotel?',
         choicesJp: ['よやくしました', 'よやくしませんでした', 'よやくする よていです', 'わかりません'],
         correctIndex: 0,
+        explanationTh: 'เรื่องบอกว่า "ホテルは、もう よやくしました" (จองโรงแรมไว้เรียบร้อยแล้ว)',
+        explanationEn: 'The story says "ホテルは、もう よやくしました" (we already booked the hotel).',
       },
     ],
   },
@@ -644,13 +748,21 @@ export const stories: Story[] = [
     questions: [
       {
         questionJp: 'あたらしい がくせいの なまえは なんですか。',
+        questionTh: 'นักเรียนใหม่ชื่ออะไร',
+        questionEn: 'What is the new student\'s name?',
         choicesJp: ['もも', 'ゆき', 'たなか', 'たろう'],
         correctIndex: 1,
+        explanationTh: 'เรื่องบอกว่า "なまえは ゆきさんです" (ชื่อยูกิ)',
+        explanationEn: 'The story says "なまえは ゆきさんです" (her name is Yuki).',
       },
       {
         questionJp: 'ふたりは なにが おなじでしたか。',
+        questionTh: 'ทั้งสองคนชอบอะไรเหมือนกัน',
+        questionEn: 'What did the two of them have in common?',
         choicesJp: ['たべもの', 'おんがく', 'がっこう', 'たんじょうび'],
         correctIndex: 1,
+        explanationTh: 'เรื่องบอกว่า "ふたりで はなしたら、おなじ おんがくが すきでした" (พอได้คุยกันก็พบว่าชอบเพลงแนวเดียวกัน)',
+        explanationEn: 'The story says "ふたりで はなしたら、おなじ おんがくが すきでした" (when we talked, we found we liked the same music).',
       },
     ],
   },
@@ -674,13 +786,21 @@ export const stories: Story[] = [
     questions: [
       {
         questionJp: 'としょかんで なんじかん べんきょうしましたか。',
+        questionTh: 'อ่านหนังสือที่ห้องสมุดกี่ชั่วโมง',
+        questionEn: 'How many hours did I study at the library?',
         choicesJp: ['一じかん', '二じかん', '三じかん', '四じかん'],
         correctIndex: 2,
+        explanationTh: 'เรื่องบอกว่า "三じかん、にほんごの ぶんぽうを べんきょうしました" (อ่านไวยากรณ์อยู่สามชั่วโมง)',
+        explanationEn: 'The story says "三じかん、にほんごの ぶんぽうを べんきょうしました" (I studied Japanese grammar for three hours).',
       },
       {
         questionJp: 'ほんを なんさつ かりましたか。',
+        questionTh: 'ยืมหนังสือกี่เล่ม',
+        questionEn: 'How many books did I borrow?',
         choicesJp: ['一さつ', '二さつ', '三さつ', 'かりませんでした'],
         correctIndex: 1,
+        explanationTh: 'เรื่องบอกว่า "かえるまえに、ほんを 二さつ かりました" (ก่อนกลับยืมหนังสือมาสองเล่ม)',
+        explanationEn: 'The story says "かえるまえに、ほんを 二さつ かりました" (before going home, I borrowed two books).',
       },
     ],
   },

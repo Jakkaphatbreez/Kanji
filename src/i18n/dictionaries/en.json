@@ -124,6 +124,7 @@
     "submit": "Submit",
     "correct": "Correct!",
     "incorrect": "Incorrect",
+    "correctAnswerLabel": "Correct answer",
     "yourScore": "Your score",
     "playAgain": "Play again",
     "typingPlaceholder": "Type your answer...",
