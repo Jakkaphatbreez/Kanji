@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { generateQuiz } from './generate';
+import { generateQuiz, buildMultipleChoiceQuestion } from './generate';
 import type { QuizItem } from './types';
 
 function makeItems(count: number, group: string): QuizItem[] {
@@ -66,5 +66,29 @@ describe('generateQuiz', () => {
     const items = makeItems(5, 'a');
     const { questions } = generateQuiz(items, 'multiple-choice', 1);
     expect(questions[0].explanation).toBeUndefined();
+  });
+
+  it('never offers a distractor that would also correctly fill the same blanked prompt', () => {
+    // Mirrors a real data ambiguity: "にほんごはむずかしいです___。" is completed
+    // correctly by both ね and よ, since both are valid Japanese sentence-enders.
+    // Whichever one is the "intended" answer for a given item, the other must
+    // never appear as a distractor for it — a learner picking it would be
+    // marked wrong despite writing a grammatically correct sentence.
+    const items: QuizItem[] = [
+      { id: 'ne', prompt: 'にほんごはむずかしいです___。', answer: 'ね', group: 'particle' },
+      { id: 'yo-collision', prompt: 'にほんごはむずかしいです___。', answer: 'よ', group: 'particle' },
+      { id: 'ka', prompt: 'これはほんです___。', answer: 'か', group: 'particle' },
+      { id: 'wa', prompt: 'がっこうはたのしいです___。', answer: 'は', group: 'particle' },
+      { id: 'mo', prompt: 'さかな___おいしいです。', answer: 'も', group: 'particle' },
+    ];
+    const question = buildMultipleChoiceQuestion(items[0], items, 3);
+    expect(question.choices).not.toContain('よ');
+    expect(question.choices).toHaveLength(4);
+  });
+
+  it('still fills up to the requested distractor count when no collision applies', () => {
+    const items = makeItems(10, 'a');
+    const question = buildMultipleChoiceQuestion(items[0], items, 3);
+    expect(question.choices).toHaveLength(4);
   });
 });
