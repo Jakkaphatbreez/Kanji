@@ -46,4 +46,25 @@ describe('generateQuiz', () => {
       expect(q.mode).toBe('typing');
     }
   });
+
+  it('carries an item explanation through to multiple-choice questions', () => {
+    const items = makeItems(5, 'a');
+    items[0].explanation = 'why this is the answer';
+    const { questions } = generateQuiz(items, 'multiple-choice', items.length);
+    const question = questions.find(q => q.correctAnswer === items[0].answer);
+    expect(question?.explanation).toBe('why this is the answer');
+  });
+
+  it('carries an item explanation through to typing questions', () => {
+    const items = makeItems(1, 'a');
+    items[0].explanation = 'why this is the answer';
+    const { questions } = generateQuiz(items, 'typing', 1);
+    expect(questions[0].explanation).toBe('why this is the answer');
+  });
+
+  it('leaves explanation undefined when the item has none', () => {
+    const items = makeItems(5, 'a');
+    const { questions } = generateQuiz(items, 'multiple-choice', 1);
+    expect(questions[0].explanation).toBeUndefined();
+  });
 });

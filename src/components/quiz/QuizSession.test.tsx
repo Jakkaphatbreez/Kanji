@@ -82,4 +82,37 @@ describe('QuizSession', () => {
     // Only the first (correct) answer should have counted.
     expect(onFinish).toHaveBeenCalledWith(2, 2);
   });
+
+  it('shows the correct answer when the user answers incorrectly', () => {
+    render(
+      <LanguageProvider>
+        <QuizSession questions={questions} onFinish={vi.fn()} />
+      </LanguageProvider>
+    );
+    fireEvent.click(screen.getByText('i'));
+    expect(screen.getByTestId('correct-answer').textContent).toContain('a');
+  });
+
+  it('does not show a redundant correct-answer line when the user answers correctly', () => {
+    render(
+      <LanguageProvider>
+        <QuizSession questions={questions} onFinish={vi.fn()} />
+      </LanguageProvider>
+    );
+    fireEvent.click(screen.getByText('a'));
+    expect(screen.queryByTestId('correct-answer')).not.toBeInTheDocument();
+  });
+
+  it('shows the explanation after answering, whether correct or incorrect', () => {
+    const withExplanation: QuizQuestion[] = [
+      { mode: 'multiple-choice', prompt: 'は', choices: ['wa', 'ha'], correctAnswer: 'wa', explanation: 'topic marker' },
+    ];
+    render(
+      <LanguageProvider>
+        <QuizSession questions={withExplanation} onFinish={vi.fn()} />
+      </LanguageProvider>
+    );
+    fireEvent.click(screen.getByText('wa'));
+    expect(screen.getByText('topic marker')).toBeInTheDocument();
+  });
 });

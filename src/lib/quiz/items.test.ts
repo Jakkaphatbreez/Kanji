@@ -64,4 +64,33 @@ describe('getQuizItems', () => {
     const items = getQuizItems(`vocabExtra${vocabN5ExtraBatches.length}`, 'en');
     expect(items).toEqual([]);
   });
+
+  it('gives every kanji item an explanation containing its on/kun readings', () => {
+    const items = getQuizItems('kanji', 'en');
+    for (const item of items) {
+      expect(item.explanation).toBeTruthy();
+    }
+    const ichi = items.find(i => i.id === 'kanji-一');
+    expect(ichi?.explanation).toContain('いち');
+  });
+
+  it('gives every particle item an explanation matching the active language usage note', () => {
+    const itemsTh = getQuizItems('particle', 'th');
+    const itemsEn = getQuizItems('particle', 'en');
+    expect(itemsTh.every(i => i.explanation && i.explanation.length > 0)).toBe(true);
+    expect(itemsTh.map(i => i.explanation)).not.toEqual(itemsEn.map(i => i.explanation));
+  });
+
+  it('gives every grammar item an explanation matching the active language pattern meaning', () => {
+    const itemsTh = getQuizItems('grammar', 'th');
+    const itemsEn = getQuizItems('grammar', 'en');
+    expect(itemsTh.every(i => i.explanation && i.explanation.length > 0)).toBe(true);
+    expect(itemsTh.map(i => i.explanation)).not.toEqual(itemsEn.map(i => i.explanation));
+  });
+
+  it('leaves explanation undefined for hiragana, katakana, and vocab items', () => {
+    expect(getQuizItems('hiragana', 'en').every(i => i.explanation === undefined)).toBe(true);
+    expect(getQuizItems('katakana', 'en').every(i => i.explanation === undefined)).toBe(true);
+    expect(getQuizItems('vocab', 'en').every(i => i.explanation === undefined)).toBe(true);
+  });
 });

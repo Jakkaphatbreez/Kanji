@@ -85,8 +85,12 @@ export interface StorySentence {
 
 export interface StoryQuestion {
   questionJp: string;
+  questionTh: string;
+  questionEn: string;
   choicesJp: string[];
   correctIndex: number;
+  explanationTh: string;
+  explanationEn: string;
 }
 
 export interface Story {

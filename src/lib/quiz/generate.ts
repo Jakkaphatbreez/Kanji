@@ -32,11 +32,12 @@ export function buildMultipleChoiceQuestion(item: QuizItem, allItems: QuizItem[]
     prompt: item.prompt,
     choices: shuffle([item.answer, ...distractors]),
     correctAnswer: item.answer,
+    explanation: item.explanation,
   };
 }
 
 function buildTypingQuestion(item: QuizItem): QuizQuestion {
-  return { mode: 'typing', prompt: item.prompt, correctAnswer: item.answer };
+  return { mode: 'typing', prompt: item.prompt, correctAnswer: item.answer, explanation: item.explanation };
 }
 
 export function generateQuiz(items: QuizItem[], mode: QuizMode, requestedCount: number): GeneratedQuiz {

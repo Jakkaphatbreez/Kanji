@@ -154,6 +154,13 @@ export function StoryPractice({ mode }: StoryPracticeProps) {
             <p className={feedback === 'correct' ? 'font-semibold text-green-600' : 'font-semibold text-red-600'}>
               {feedback === 'correct' ? t.quiz.correct : t.quiz.incorrect}
             </p>
+            <p className="mt-1 text-sm text-gray-600">{language === 'th' ? question.questionTh : question.questionEn}</p>
+            {feedback === 'incorrect' && (
+              <p data-testid="correct-answer" className="mt-1 text-gray-700">
+                {t.quiz.correctAnswerLabel}: {mcQuestion.correctAnswer}
+              </p>
+            )}
+            <p className="mt-1 text-sm text-gray-600">{language === 'th' ? question.explanationTh : question.explanationEn}</p>
             <button
               onClick={() => nextQuestion(story, qIndex, score)}
               className="mt-2 rounded bg-pink-500 px-4 py-2 text-white hover:bg-pink-600"
